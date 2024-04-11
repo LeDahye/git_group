@@ -1,0 +1,144 @@
+body{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 3px;
+    background: linear-gradient(#fcadad, #7e68d6);
+}
+.container{
+
+    gap: 2px;
+    grid-template-columns:repeat(4,1fr) ;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+    
+    "a b c d"
+    "e f g h"
+    "i j k l"
+    "m n o p"
+    "q r s t";
+}
+button{
+    all:unset;
+    width: 80px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(152, 222, 243);
+
+    border-radius: 10%;
+    border: 3px solid rgb(56, 46, 108);
+    font-weight: 600;
+}
+
+button:focus{
+    scale: 95%;
+    background-color: rgb(85, 130, 179);
+
+
+}
+
+button::selection{
+    user-select: none;
+
+}
+#display{
+    border: 3px solid rgb(56, 46, 108);
+    width: 340px;
+    height: 170px;
+    background-color: aliceblue;
+    background: linear-gradient(#d6fffa, #98fff6);
+}
+#display:hover{
+    transition: 0.5s;
+    background-color: rgb(221, 238, 255);
+
+}
+
+/* ==================================연산자 버튼======================================================== */
+#btn99{
+    /* = 연산자 */
+    grid-area: a;
+    text-transform: uppercase;
+}
+#btn43{
+    /* + 연산자 */
+    grid-area: p;
+    font-size: 20px;
+}
+#btn78{
+    /* N 연산자 */
+    grid-area: q;
+}
+#btn98{
+    /* b 연산자 */
+    grid-area: c;
+}
+#btn46{
+    /* . 연산자 */
+    grid-area: s;
+    font-size: 25px;
+}
+#btn67{
+    /* CE 연산자 */
+    grid-area: b;
+}
+#btn47{
+    /* / 연산자 */
+    grid-area: d;
+}
+#btn61{
+    /* = 연산자 */
+    grid-area: t;
+    color: white;
+    background-color: rgb(62, 109, 157);
+}
+#btn45{
+    /* - 연산자 */
+    grid-area: l;
+    font-size: 30px;
+}
+#btn88{
+    /* X 연산자 */
+    grid-area: h;
+/* ======================================숫자 버튼================================================ */
+}
+#btn0{
+    grid-area: r;
+}
+#btn1{
+    grid-area: m;
+}
+#btn2{
+    grid-area: n;
+}
+#btn3{
+    grid-area: o;
+}
+#btn4{
+    grid-area: i;
+}
+#btn5{
+    grid-area: j;
+}
+#btn6{
+    grid-area: k;
+}
+#btn7{
+    grid-area: e;
+}
+#btn8{
+    grid-area: f;
+}
+#btn9{
+    grid-area: g ;
+}
+img{
+    width:40%;
+    user-select: none;
+    
+}
+/* ============================================================================================== */
