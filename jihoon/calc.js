@@ -7,32 +7,32 @@ const calc_main = {
     pad_tagName: "button",
 
     operate: ["=", "-", "X", "/", "CE", "c", ".", "b", "N", "+"],
-    
-    
+
+
     // form, container ★★★★★main작업★★★★★
     constructure_set: function () {
-        
+
         const form_tag = document.createElement("form")
         const container_tag = document.createElement("div")
         container_tag.className = "container"
-        
+
         form_tag.setAttribute("name", "key")
         form_tag.appendChild(container_tag)
         document.body.appendChild(form_tag)
         this.make_num_pad(this.pad_tagName)
         this.set_grid()
-        this.make_operate_pad(this.pad_tagName,this.operate)
+        this.make_operate_pad(this.pad_tagName, this.operate)
         this.css_set()
         this.display(this.dispaly_tag)
-    
+
     },
     //연산자버튼 생성 함수
-    make_operate_pad: function (tagName,operate) {
+    make_operate_pad: function (tagName, operate) {
         for (x of operate) {
             const El = makeELtool(tagName, x, `btn${x.charCodeAt(0)}`)
             document.querySelector(".container").appendChild(El)
         }
-        
+
     },
     //디스플레이 생성 함수
     display: function (dispaly_tag) {
@@ -42,7 +42,7 @@ const calc_main = {
     },
     // 숫자버튼 생성 함수
     make_num_pad: function (pad_tagName) {
-        
+
         for (let i = 0; i < 10; i++) {
             const El = makeELtool(pad_tagName, i, `btn${i}`);
             document.querySelector(".container").appendChild(El)
@@ -54,9 +54,9 @@ const calc_main = {
         board.style.display = "grid"
     },
     css_set: function () {
-        document.getElementById("btn98").innerHTML = "<img src=\"./back.png\"></img>"
-        document.getElementById("btn47").innerHTML = "<img src=\"./division.png\"></img>"
-        
+        document.getElementById("btn98").innerHTML = "<img src=\".././jihoon/back.png\"></img>"
+        document.getElementById("btn47").innerHTML = "<img src=\".././jihoon/division.png\"></img>"
+
     },
 }
 
@@ -64,8 +64,8 @@ calc_main.constructure_set()
 
 
 //전역 편의 기능 함수
-function makeELtool(tag,text,idname) {
-    
+function makeELtool(tag, text, idname) {
+
     const tagEl = document.createElement(tag)
     const textEl = document.createTextNode(text)
     tagEl.appendChild(textEl);
@@ -73,7 +73,7 @@ function makeELtool(tag,text,idname) {
 
     return tagEl
 
-} 
+}
 
 
 
