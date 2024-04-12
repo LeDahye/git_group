@@ -1,4 +1,4 @@
-body{
+body {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
@@ -7,21 +7,23 @@ body{
     gap: 3px;
     background: linear-gradient(#fcadad, #7e68d6);
 }
-.container{
+
+.container {
 
     gap: 2px;
-    grid-template-columns:repeat(4,1fr) ;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-template-areas:
-    
-    "a b c d"
-    "e f g h"
-    "i j k l"
-    "m n o p"
-    "q r s t";
+
+        "a b c d"
+        "e f g h"
+        "i j k l"
+        "m n o p"
+        "q r s t";
 }
-button{
-    all:unset;
+
+button {
+    all: unset;
     width: 80px;
     height: 60px;
     display: flex;
@@ -34,111 +36,132 @@ button{
     font-weight: 600;
 }
 
-button:focus{
+button:focus:hover {
     scale: 95%;
     background-color: rgb(85, 130, 179);
-
-
 }
 
-button::selection{
+button::selection {
     user-select: none;
 
 }
-#display{
+
+#display {
     border: 3px solid rgb(56, 46, 108);
     width: 340px;
     height: 170px;
     background-color: aliceblue;
     background: linear-gradient(#d6fffa, #98fff6);
 }
-#display:hover{
+
+#display:hover {
     transition: 0.5s;
     background-color: rgb(221, 238, 255);
 
 }
 
 /* ==================================연산자 버튼======================================================== */
-#btn99{
+#btn99 {
     /* = 연산자 */
     grid-area: a;
     text-transform: uppercase;
 }
-#btn43{
+
+#btn43 {
     /* + 연산자 */
     grid-area: p;
     font-size: 20px;
 }
-#btn78{
+
+#btn78 {
     /* N 연산자 */
     grid-area: q;
 }
-#btn98{
+
+#btn98 {
     /* b 연산자 */
     grid-area: c;
 }
-#btn46{
+
+#btn46 {
     /* . 연산자 */
     grid-area: s;
     font-size: 25px;
 }
-#btn67{
+
+#btn67 {
     /* CE 연산자 */
     grid-area: b;
 }
-#btn47{
+
+#btn47 {
     /* / 연산자 */
     grid-area: d;
 }
-#btn61{
+
+#btn61 {
     /* = 연산자 */
     grid-area: t;
     color: white;
     background-color: rgb(62, 109, 157);
 }
-#btn45{
+
+#btn45 {
     /* - 연산자 */
     grid-area: l;
     font-size: 30px;
 }
-#btn88{
+
+#btn88 {
     /* X 연산자 */
     grid-area: h;
-/* ======================================숫자 버튼================================================ */
+    /* ======================================숫자 버튼================================================ */
 }
-#btn0{
+
+#btn0 {
     grid-area: r;
 }
-#btn1{
+
+#btn1 {
     grid-area: m;
 }
-#btn2{
+
+#btn2 {
     grid-area: n;
 }
-#btn3{
+
+#btn3 {
     grid-area: o;
 }
-#btn4{
+
+#btn4 {
     grid-area: i;
 }
-#btn5{
+
+#btn5 {
     grid-area: j;
 }
-#btn6{
+
+#btn6 {
     grid-area: k;
 }
-#btn7{
+
+#btn7 {
     grid-area: e;
 }
-#btn8{
+
+#btn8 {
     grid-area: f;
 }
-#btn9{
-    grid-area: g ;
+
+#btn9 {
+    grid-area: g;
 }
-img{
-    width:40%;
+
+img {
+    width: 40%;
     user-select: none;
-    
+
 }
+
 /* ============================================================================================== */

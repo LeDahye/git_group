@@ -12,7 +12,7 @@ const calc_main = {
     // form, container ★★★★★main작업★★★★★
     constructure_set: function () {
 
-        const form_tag = document.createElement("form")
+        const form_tag = document.createElement("div")
         const container_tag = document.createElement("div")
         container_tag.className = "container"
 
