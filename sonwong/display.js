@@ -8,15 +8,15 @@ display2.id = 'display2';
 document.body.appendChild(display1);
 document.body.appendChild(display2);
 
-// 버튼생성
-let btn1 = document.createElement('button');
-let btn2 = document.createElement('button');
+// // 버튼생성
+// let btn1 = document.createElement('button');
+// let btn2 = document.createElement('button');
 
-btn1.id = 'btn1';
-btn2.id = 'btn2';
+// btn1.id = 'btn1';
+// btn2.id = 'btn2';
 
-document.body.appendChild(btn1);
-document.body.appendChild(btn2);
+// document.body.appendChild(btn1);
+// document.body.appendChild(btn2);
 
 // 클릭이벤트(수식창,display1)
 btn1.addEventListener('click', function() {
