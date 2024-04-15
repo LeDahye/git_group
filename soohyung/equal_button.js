@@ -95,7 +95,7 @@ const equal_cal = {
 }
 
 
-let modify = "((2x3)÷4)-(4÷3)+(5x6)=";
+let modify = "(2x2)x(2x2)=";
 
 function equal_bt_click () {
     modify = equal_cal.sym_change(modify);
