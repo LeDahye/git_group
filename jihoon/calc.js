@@ -6,7 +6,7 @@ const calc_main = {
 
     pad_tagName: "button",
 
-    operate: ["=", "-", "X", "/", "CE", "c", ".", "b", "N", "+"],
+    operate: ["=", "-", "X", "/", "(", ")", ".", "b", "C", "+"],
 
 
     // form, container ★★★★★main작업★★★★★

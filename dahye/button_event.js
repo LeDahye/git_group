@@ -50,7 +50,7 @@ let operate_dot = document.getElementById("btn46").addEventListener("click",
 // 지우기 버튼
 let operate_delete = document.getElementById("btn98").addEventListener("click",
     function () {
-        // text -= "";
+        text -= "";
         document.getElementById("display").innerHTML = text;
     })
 
