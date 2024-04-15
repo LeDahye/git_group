@@ -1,5 +1,6 @@
 let text = [];
 
+
 function btn_num() {
     for (let i = 0; i < 10; i++) {
         // Id = 지훈 인터페이스 숫자 값
@@ -10,12 +11,11 @@ function btn_num() {
                 document.getElementById("display").innerHTML = text;
             })
     }
-
 }
 
 // 초기값
-let result = document.getElementById("display");
-result.innerHTML = "0";
+// let result = document.getElementById("display");
+// result.innerHTML = "0";
 
 // 덧셈 버튼
 let operate_plus = document.getElementById("btn43").addEventListener("click",
@@ -23,6 +23,15 @@ let operate_plus = document.getElementById("btn43").addEventListener("click",
         if (!isNaN(text[text.length-1])) {
             text += "+";
             document.getElementById("display").innerHTML = text;
+
+        }else if (text.includes(")") ==true || text.includes("(") ==true) {
+            text += "+";
+            document.getElementById("display").innerHTML = text;
+            
+        } else {
+            text += "";
+            document.getElementById("display").innerHTML = text;
+
         }
     })
 
@@ -86,8 +95,10 @@ let operate_open = document.getElementById("btn40").addEventListener("click",
 // 괄호 닫기 버튼
 let operate_close = document.getElementById("btn41").addEventListener("click",
     function () {
+        if (text.includes("(") ==true) {
         text += ")";
         document.getElementById("display").innerHTML = text;
+        }
     })
 
 // equal 버튼
@@ -96,24 +107,28 @@ let equal = document.getElementById("btn61").addEventListener("click",
         if (!isNaN(text[text.length-1])) {
         text += "=";
         document.getElementById("display").innerHTML = text;
+    } else if (text.includes(")") ==true) {
+        text += "=";
+        document.getElementById("display").innerHTML = text;
     }
     })
 
 
 btn_num()
 
-let operate_arr = ["=", "-", "X", "/", "(", ")", ".", "b", "C", "+"];
-
-// let operate = document.getElementById("display");
-// operate_arr.forEach( function(arr) {
-
-// })
 
 
-for (x of operate_arr) {
-    document.getElementById(`btn${x.charCodeAt(0)}`).addEventListener("click",
-        () => {
-            text += x;
-            document.getElementById("display").innerHTML = text;
-        })
-}
+// // let operate = document.getElementById("display");
+// // operate_arr.forEach( function(arr) {
+    
+    // // })
+    
+//     const operate_arr = ["=", "-", "X", "/", "(", ")", ".", "b", "C", "+"]
+
+// for (let x of operate_arr) {
+//     document.getElementById(`btn${x.charCodeAt(0)}`).addEventListener("click",
+//         () => {
+//             text += x;
+//             document.getElementById("display").innerHTML = text;
+//         })
+// }
