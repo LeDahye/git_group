@@ -95,9 +95,9 @@ const equal_cal = {
 }
 
 
-let modify = "(2x2)x(2x2)=";
+// let modify = "(2x2)x(2x2)=";
 
-function equal_bt_click () {
+function equal_bt_click (modify) {
     modify = equal_cal.sym_change(modify);
     modify = equal_cal.del_equal_bt(modify);
     let modify2 = equal_cal.convert_to_arr(modify);
@@ -106,5 +106,3 @@ function equal_bt_click () {
     console.log(result);
 
 }
-
-equal_bt_click();
