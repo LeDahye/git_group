@@ -73,7 +73,7 @@ button::selection {
     font-size: 20px;
 }
 
-#btn78 {
+#btn67 {
     /* N 연산자 */
     grid-area: q;
 }
@@ -89,7 +89,7 @@ button::selection {
     font-size: 25px;
 }
 
-#btn67 {
+#btn41 {
     /* CE 연산자 */
     grid-area: b;
 }
