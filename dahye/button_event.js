@@ -12,6 +12,8 @@ function btn_num() {
 
 }
 
+
+
 // 덧셈 버튼
 let operate_plus = document.getElementById("btn43").addEventListener("click",
     function () {
@@ -29,14 +31,14 @@ let operate_minus = document.getElementById("btn45").addEventListener("click",
 // 곱하기 버튼
 let operate_multiple = document.getElementById("btn88").addEventListener("click",
     function () {
-        text += "*";
+        text += "x";
         document.getElementById("display").innerHTML = text;
     })
 
 // 나누기 버튼
 let operate_divide = document.getElementById("btn47").addEventListener("click",
     function () {
-        text += "/";
+        text += "&divide;";
         document.getElementById("display").innerHTML = text;
     })
 
@@ -50,7 +52,7 @@ let operate_dot = document.getElementById("btn46").addEventListener("click",
 // 지우기 버튼
 let operate_delete = document.getElementById("btn98").addEventListener("click",
     function () {
-        // text -= "";
+        text = text.slice(0, -1);
         document.getElementById("display").innerHTML = text;
     })
 
@@ -61,5 +63,31 @@ let operate_clear = document.getElementById("btn99").addEventListener("click",
         document.getElementById("display").innerHTML = text;
     })
 
+// 왼쪽 괄호 버튼
+let operate_left = document.getElementById("btn99").addEventListener("click",
+    function () {
+        text = "(";
+        document.getElementById("display").innerHTML = text;
+    })
+
+// 오른쪽 괄호 버튼
+let operate_right = document.getElementById("btn99").addEventListener("click",
+    function () {
+        text = ")";
+        document.getElementById("display").innerHTML = text;
+    })
+
+//     let equal = 
+
 
 btn_num()
+
+// const operate = ["=", "-", "X", "/", "CE", "c", ".", "b", "N", "+"]
+
+// for (x of operate) {
+//     document.getElementById(`btn${x.charCodeAt(0)}`).addEventListener("click",
+//         function () {
+//             text += x;
+//             document.getElementById("display").innerHTML = text;
+//         })
+// }
