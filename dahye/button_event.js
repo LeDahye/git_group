@@ -1,4 +1,4 @@
-
+import { equal_cal, equal_bt_click} from '../soohyung/equal_button.js';
 
 let text = [];
 
@@ -115,13 +115,16 @@ function () {
             text += "=";
             document.getElementById("display").innerHTML = text;
         }
+        equal_bt_click(text);
     })
+
     // }
 
-    let text2 = "2+2="
-    
-    export {text2};
-    export {text, operate_plus, operate_minus, operate_multiple, operate_divide, operate_dot, operate_delete, operate_clear, operate_open, operate_close, equal};
+
+
+
+
+
 
 // // let operate = document.getElementById("display");
 // // operate_arr.forEach( function(arr) {
