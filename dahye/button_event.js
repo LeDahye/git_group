@@ -1,5 +1,36 @@
 import { equal_cal, equal_bt_click } from '../soohyung/equal_button.js';
 
+let text = [];
+
+// 키보드
+function btn_num_key() {
+    for (let i = 0; i < 10; i++) {
+        // Id = 지훈 인터페이스 숫자 값
+        document.getElementById(`btn${i}`).addEventListener("keydown",
+            function (event) {
+                text += event.key;
+                // Id = 선웅 디스플레이 값
+                document.getElementById("display2").innerHTML = text;
+            })
+    }
+}
+
+// 마우스
+function btn_num_click() {
+    for (let i = 0; i < 10; i++) {
+        // Id = 지훈 인터페이스 숫자 값
+        document.getElementById(`btn${i}`).addEventListener("click",
+            function (event) {
+                text += i;
+                // Id = 선웅 디스플레이 값
+                document.getElementById("display2").innerHTML = text;
+            })
+    }
+}
+
+btn_num_key()
+btn_num_click()
+
 // 덧셈 버튼
 function plusBt() {
 
@@ -135,7 +166,6 @@ let equal = document.getElementById("btn61").addEventListener("click",
     })
 
 
-let text = "";
 
 // const operate_arr = ["=", "-", "x", "&divide", "(", ")", ".", "b", "C", "+"]
 
