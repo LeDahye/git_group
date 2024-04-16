@@ -46,7 +46,7 @@ button::selection {
 
 }
 
-#display {
+#display1, #display2 {
     border: 3px solid rgb(56, 46, 108);
     width: 340px;
     height: 170px;
@@ -54,7 +54,7 @@ button::selection {
     background: linear-gradient(#d6fffa, #98fff6);
 }
 
-#display:hover {
+#display1:hover {
     transition: 0.5s;
     background-color: rgb(221, 238, 255);
 

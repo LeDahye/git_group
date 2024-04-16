@@ -111,7 +111,7 @@ function equal_bt_click(modify) {
     let modify2 = equal_cal.convert_to_arr(modify);
     let modify3 = equal_cal.convert_to_post(modify2);
     let result = equal_cal.cal_postfix(modify3);
-    console.log(result);
+    return result;
 }
 
 export { equal_cal, equal_bt_click};

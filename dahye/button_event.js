@@ -9,7 +9,7 @@ function btn_num() {
             function () {
                 text += i;
                 // Id = 선웅 디스플레이 값
-                document.getElementById("display").innerHTML = text;
+                document.getElementById("display1").innerHTML = text;
             })
     }
 }
@@ -17,24 +17,23 @@ function btn_num() {
 btn_num()
 
 // 초기값
-// let result = document.getElementById("display");
+// let result = document.getElementById("display1");
 // result.innerHTML = "0";
 
-// function button_utill() {
-// 덧셈 버튼
 
+// 덧셈 버튼
 let operate_plus = document.getElementById("btn43").addEventListener("click",
 function () {
         if (!isNaN(text[text.length-1])) {
             text += "+";
-            document.getElementById("display").innerHTML = text;
+            document.getElementById("display1").innerHTML = text;
         } else if (text.includes(")") == true || text.includes("(") == true) {
             text += "+";
-            document.getElementById("display").innerHTML = text;
+            document.getElementById("display1").innerHTML = text;
             
         } else {
             text += "";
-            document.getElementById("display").innerHTML = text;
+            document.getElementById("display1").innerHTML = text;
             
         }
     })
@@ -44,7 +43,7 @@ function () {
     function () {
         if (!isNaN(text[text.length-1])) {
             text += "-";
-            document.getElementById("display").innerHTML = text;
+            document.getElementById("display1").innerHTML = text;
         }
     })
 
@@ -53,7 +52,7 @@ function () {
     function () {
         if (!isNaN(text[text.length-1])) {
             text += "x";
-            document.getElementById("display").innerHTML = text;
+            document.getElementById("display1").innerHTML = text;
         }
     })
     
@@ -62,7 +61,7 @@ function () {
     function () {
         if (!isNaN(text[text.length-1])) {
             text += "&divide";
-            document.getElementById("display").innerHTML = text;
+            document.getElementById("display1").innerHTML = text;
         }
     })
     
@@ -71,7 +70,7 @@ function () {
     function () {
         if (!isNaN(text[text.length-1])) {
             text += ".";
-            document.getElementById("display").innerHTML = text;
+            document.getElementById("display1").innerHTML = text;
         }
     })
 
@@ -79,21 +78,21 @@ function () {
     let operate_delete = document.getElementById("btn98").addEventListener("click",
     function () {
         text = text.slice(0, -1);
-        document.getElementById("display").innerHTML = text;
+        document.getElementById("display1").innerHTML = text;
     })
     
     // C 버튼
     let operate_clear = document.getElementById("btn67").addEventListener("click",
     function () {
         text = [];
-        document.getElementById("display").innerHTML = text;
+        document.getElementById("display1").innerHTML = text;
     })
     
     // 괄호 열기 버튼
     let operate_open = document.getElementById("btn40").addEventListener("click",
     function () {
         text += "(";
-        document.getElementById("display").innerHTML = text;
+        document.getElementById("display1").innerHTML = text;
     })
     
     // 괄호 닫기 버튼
@@ -101,7 +100,7 @@ function () {
     function () {
         if (text.includes("(") ==true) {
             text += ")";
-            document.getElementById("display").innerHTML = text;
+            document.getElementById("display1").innerHTML = text;
         }
     })
     
@@ -110,12 +109,12 @@ function () {
     function () {
         if (!isNaN(text[text.length-1])) {
             text += "=";
-            document.getElementById("display").innerHTML = text;
+            document.getElementById("display1").innerHTML = text;
         }  else if (text.includes(")") == true) {
             text += "=";
-            document.getElementById("display").innerHTML = text;
+            document.getElementById("display1").innerHTML = text;
         }
-        equal_bt_click(text);
+        document.getElementById("display2").innerHTML = equal_bt_click(text);
     })
 
     // }
@@ -128,7 +127,7 @@ function () {
 
 
 
-// // let operate = document.getElementById("display");
+// // let operate = document.getElementById("display1");
 // // operate_arr.forEach( function(arr) {
     
     // // })
@@ -139,6 +138,6 @@ function () {
 //     document.getElementById(`btn${x.charCodeAt(0)}`).addEventListener("click",
 //         () => {
 //             text += x;
-//             document.getElementById("display").innerHTML = text;
+//             document.getElementById("display1").innerHTML = text;
 //         })
 // }
