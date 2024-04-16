@@ -116,7 +116,7 @@ function equal_bt_click(modify) {
 }
 
 
-    // console.log(result);
 
 
 export { equal_cal, equal_bt_click};
+
