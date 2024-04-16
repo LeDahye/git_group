@@ -1,11 +1,5 @@
 
 
-// import {
-//     text, btn_num, operate_plus, operate_minus, operate_multiple, operate_divide,
-//     operate_dot, operate_delete, operate_clear, operate_open, operate_close, equal
-// } from '../dahye/button_event.js';
-
-
 const equal_cal = {
     sym_change: function sym_change(modify) {
         let modify1 = '';
@@ -24,8 +18,12 @@ const equal_cal = {
         return modify1;
     },
 
+    addX: function addx (modify) {
+        return modify.replace(/\)\(/g, ')*(');
+    },
+
     del_equal_bt: function del_equal_bt(modify) {
-        if (modify[modify.length - 1] === '=') {
+        if (modify[modify.length - 1]  === '=') {
             return modify.slice(0, -1);
         }
         return modify;
@@ -102,16 +100,16 @@ const equal_cal = {
     }
 }
 
+let a = "(1+2)(3+4)="
 
-// let modify = "(2x2)x(2x2)=";
-
-function equal_bt_click(modify) {
+function equal_bt_click (modify) {
     modify = equal_cal.sym_change(modify);
+    modify = equal_cal.addX(modify)
     modify = equal_cal.del_equal_bt(modify);
     let modify2 = equal_cal.convert_to_arr(modify);
     let modify3 = equal_cal.convert_to_post(modify2);
     let result = equal_cal.cal_postfix(modify3);
+    console.log(result);
+}
 
-    // console.log(result);
-
-export { equal_cal, equal_bt_click};
+equal_bt_click(a)
