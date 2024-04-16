@@ -1,12 +1,25 @@
 class Calculator {
     constructor() {
+        // all로 묶기
+        this.all=document.createElement('div');
+        document.body.appendChild(this.all);
+        
+        // display1생성
         this.display1 = document.createElement('div');
+
         this.display2 = document.createElement('div');
         // this.btn1 = document.createElement('button');
         // this.btn2 = document.createElement('button');
 
+
+
         this.display1.id = 'display1';
+        this.all.appendChild=(this.display1);
+
+        // display2생성
+        this.display2 = document.createElement('div');
         this.display2.id = 'display2';
+
         // this.btn1.id = 'btn1';
         // this.btn2.id = 'btn2';
 
@@ -20,8 +33,12 @@ class Calculator {
         document.body.appendChild(this.display2);
         // document.body.appendChild(this.btn1);
         // document.body.appendChild(this.btn2);
+
+        this.all.appendChild=(this.display2);
+
     }
 
+    // 기능(조건문)
     show(value) {
         if (value === 1) {
             let display1Text = this.display1.innerHTML;

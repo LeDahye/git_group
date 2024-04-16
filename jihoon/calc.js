@@ -29,7 +29,7 @@ const calc_main = {
     //연산자버튼 생성 함수
     make_operate_pad: function (tagName, operate) {
         for (x of operate) {
-            const El = makeELtool(tagName, x, `btn${x.charCodeAt(0)}`)
+            const El = makeELtool(tagName, x, `btn${x.charCodeAt(0)}`,"btn")
             document.querySelector(".container").appendChild(El)
         }
 
@@ -44,7 +44,7 @@ const calc_main = {
     make_num_pad: function (pad_tagName) {
 
         for (let i = 0; i < 10; i++) {
-            const El = makeELtool(pad_tagName, i, `btn${i}`);
+            const El = makeELtool(pad_tagName, i, `btn${i}`,"btn");
             document.querySelector(".container").appendChild(El)
         }
     },
@@ -64,12 +64,13 @@ calc_main.constructure_set()
 
 
 //전역 편의 기능 함수
-function makeELtool(tag, text, idname) {
+function makeELtool(tag, text, idname,claaname) {
 
     const tagEl = document.createElement(tag)
     const textEl = document.createTextNode(text)
     tagEl.appendChild(textEl);
     tagEl.id = idname
+    tagEl.className = claaname
 
     return tagEl
 

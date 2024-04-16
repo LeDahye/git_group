@@ -127,7 +127,11 @@ function () {
 
 
 
+
 // // let operate = document.getElementById("display1");
+
+// // let operate = document.getElementById("display");
+
 // // operate_arr.forEach( function(arr) {
     
     // // })
