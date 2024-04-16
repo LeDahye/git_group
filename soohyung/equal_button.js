@@ -1,11 +1,3 @@
-
-
-// import {
-//     text, btn_num, operate_plus, operate_minus, operate_multiple, operate_divide,
-//     operate_dot, operate_delete, operate_clear, operate_open, operate_close, equal
-// } from '../dahye/button_event.js';
-
-
 const equal_cal = {
     sym_change: function sym_change(modify) {
         let modify1 = '';
@@ -14,7 +6,7 @@ const equal_cal = {
                 case 'x':
                     modify1 += '*';
                     break;
-                case '÷':
+                case 'รท':
                     modify1 += '/';
                     break;
                 default:
@@ -22,6 +14,10 @@ const equal_cal = {
             }
         }
         return modify1;
+    },
+
+    addX: function addx(modify) {
+        return modify.replace(/\)\(/g, ')*(');
     },
 
     del_equal_bt: function del_equal_bt(modify) {
@@ -32,7 +28,7 @@ const equal_cal = {
     },
 
     convert_to_arr: function convert_to_arr(modify) {
-        return modify.match(/\d+|\+|\-|\*|\/|\(|\)/g);
+        return modify.match(/\d*\.?\d+|\+|\-|\*|\/|\(|\)/g);
     },
 
     priority_fn: function priority_fn(priority) {
@@ -83,7 +79,7 @@ const equal_cal = {
 
         for (let i = 0; i < postfix_result.length; i++) {
             if (!isNaN(postfix_result[i])) {
-                stack.push(parseInt(postfix_result[i]));
+                stack.push(parseFloat(postfix_result[i]));
             } else {
                 let num2 = stack.pop();
                 let num1 = stack.pop();
@@ -103,10 +99,10 @@ const equal_cal = {
 }
 
 
-// let modify = "(2x2)x(2x2)=";
 
 function equal_bt_click(modify) {
     modify = equal_cal.sym_change(modify);
+    modify = equal_cal.addX(modify)
     modify = equal_cal.del_equal_bt(modify);
     let modify2 = equal_cal.convert_to_arr(modify);
     let modify3 = equal_cal.convert_to_post(modify2);
@@ -115,8 +111,4 @@ function equal_bt_click(modify) {
     return result;
 }
 
-
-
-
-export { equal_cal, equal_bt_click};
-
+export { equal_cal, equal_bt_click };

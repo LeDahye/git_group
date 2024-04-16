@@ -2,16 +2,29 @@
     display: flex;
     flex-direction: column-reverse;
     width: 300px;
-
+    position: absolute;
+    margin-left: 700px;
+    margin-top: 50px;
 }
 
 #history_container button {
     height: 60px;
-    width: 300px;    
+    width: 300px;
+    cursor: pointer;
 }
 
 #history_delete {
-    color: red;
-    height: 60px;
-    width: 300px;
+    border: 0px;
+    height: 40px;
+    width: 60px;
+    background-color: white;
+    background-image: url(./delete_button.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    margin-top: 400px;
+    margin-left: 930px;
+
+    cursor: pointer;
 }

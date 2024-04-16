@@ -50,7 +50,7 @@ for (let i = 0; i<localStorage.length ; i++) {
 const delete_button = document.getElementById("history_delete")
 delete_button.addEventListener("click", () => {
     window.localStorage.clear()
-    document.querySelector("div").innerHTML = ""    
+    document.querySelector("#history_container").innerHTML = ""    
     // let button = document.querySelector('[id^="btn"]')
     // button.remove()
 
