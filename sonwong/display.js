@@ -1,44 +1,17 @@
 class Calculator {
     constructor() {
-        // all로 묶기
-        this.all=document.createElement('div');
-        document.body.appendChild(this.all);
-        
-        // display1생성
+        // display1 생성
         this.display1 = document.createElement('div');
-
-        this.display2 = document.createElement('div');
-        // this.btn1 = document.createElement('button');
-        // this.btn2 = document.createElement('button');
-
-
-
         this.display1.id = 'display1';
-        this.all.appendChild=(this.display1);
-
-        // display2생성
+        document.body.appendChild(this.display1);
+        
+        // display2 생성
         this.display2 = document.createElement('div');
         this.display2.id = 'display2';
-
-        // this.btn1.id = 'btn1';
-        // this.btn2.id = 'btn2';
-
-        // this.btn1.textContent = 'Display1 버튼';
-        // this.btn2.textContent = 'Display2 버튼';
-
-        // this.btn1.addEventListener('click', () => this.show(1)); // display1에 연결
-        // this.btn2.addEventListener('click', () => this.show(2)); // display2에 연결
-
-        document.body.appendChild(this.display1);
         document.body.appendChild(this.display2);
-        // document.body.appendChild(this.btn1);
-        // document.body.appendChild(this.btn2);
-
-        this.all.appendChild=(this.display2);
-
     }
-
-    // 기능(조건문)
+    
+    // 기능(d1, d2 값이 있으면 d2 -> d1으로 이동, d2 초기화)
     show(value) {
         if (value === 1) {
             let display1Text = this.display1.innerHTML;
