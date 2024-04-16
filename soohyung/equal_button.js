@@ -1,11 +1,5 @@
 
 
-// import {
-//     text, btn_num, operate_plus, operate_minus, operate_multiple, operate_divide,
-//     operate_dot, operate_delete, operate_clear, operate_open, operate_close, equal
-// } from '../dahye/button_event.js';
-
-
 const equal_cal = {
     sym_change: function sym_change(modify) {
         let modify1 = '';
@@ -24,15 +18,19 @@ const equal_cal = {
         return modify1;
     },
 
+    addX: function addx (modify) {
+        return modify.replace(/\)\(/g, ')*(');
+    },
+
     del_equal_bt: function del_equal_bt(modify) {
-        if (modify[modify.length - 1] === '=') {
+        if (modify[modify.length - 1]  === '=') {
             return modify.slice(0, -1);
         }
         return modify;
     },
 
     convert_to_arr: function convert_to_arr(modify) {
-        return modify.match(/\d+|\+|\-|\*|\/|\(|\)/g);
+        return modify.match(/\d*\.?\d+|\+|\-|\*|\/|\(|\)/g);
     },
 
     priority_fn: function priority_fn(priority) {
@@ -83,7 +81,7 @@ const equal_cal = {
 
         for (let i = 0; i < postfix_result.length; i++) {
             if (!isNaN(postfix_result[i])) {
-                stack.push(parseInt(postfix_result[i]));
+                stack.push(parseFloat(postfix_result[i]));
             } else {
                 let num2 = stack.pop();
                 let num1 = stack.pop();
@@ -103,15 +101,24 @@ const equal_cal = {
 }
 
 
-// let modify = "(2x2)x(2x2)=";
 
-function equal_bt_click(modify) {
+function equal_bt_click (modify) {
     modify = equal_cal.sym_change(modify);
+    modify = equal_cal.addX(modify)
     modify = equal_cal.del_equal_bt(modify);
     let modify2 = equal_cal.convert_to_arr(modify);
     let modify3 = equal_cal.convert_to_post(modify2);
     let result = equal_cal.cal_postfix(modify3);
+}
+
+<<<<<<< HEAD
+    return result;
+}
+
 
     // console.log(result);
 
+
 export { equal_cal, equal_bt_click};
+=======
+>>>>>>> 0ea151a1ade81710f70b65028ec0539e6d0ac64e

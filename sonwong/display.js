@@ -1,6 +1,6 @@
 class Calculator {
     constructor() {
-        // 부모 div 생성
+        // 부모 div  생성
         this.container = document.createElement('div');
         
         // display1 생성
