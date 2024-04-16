@@ -20,7 +20,7 @@ body {
         "q r s t";
 }
 
-button {
+.btn {
     all: unset;
     width: 80px;
     height: 60px;
@@ -32,6 +32,8 @@ button {
     border-radius: 10%;
     border: 3px solid rgb(56, 46, 108);
     font-weight: 600;
+
+    cursor: pointer;
 }
 
 button:focus:hover {
@@ -48,7 +50,8 @@ button::selection {
     margin-bottom: 20px;
 }
 
-#display1, #display2 {
+#display1,
+#display2 {
     /* border: 3px solid rgb(56, 46, 108); */
     width: 300px;
     height: 50px;
@@ -97,7 +100,7 @@ button::selection {
     grid-area: b;
 }
 
-#btn47 {
+#btn38 {
     /* / 연산자 */
     grid-area: d;
 }
@@ -115,7 +118,7 @@ button::selection {
     font-size: 30px;
 }
 
-#btn88 {
+#btn120 {
     /* X 연산자 */
     grid-area: h;
     /* ======================================숫자 버튼================================================ */

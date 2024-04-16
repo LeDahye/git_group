@@ -6,7 +6,7 @@ const calc_main = {
 
     pad_tagName: "button",
 
-    operate: ["=", "-", "X", "/", "(", ")", ".", "b", "C", "+"],
+    operate: ["=", "-", "x", "&divide", "(", ")", ".", "b", "C", "+"],
 
 
     // form, container ★★★★★main작업★★★★★
@@ -55,7 +55,7 @@ const calc_main = {
     },
     css_set: function () {
         document.getElementById("btn98").innerHTML = "<img src=\".././jihoon/back.png\"></img>"
-        document.getElementById("btn47").innerHTML = "<img src=\".././jihoon/division.png\"></img>"
+        document.getElementById("btn38").innerHTML = "<img src=\".././jihoon/division.png\"></img>"
 
     },
 }
