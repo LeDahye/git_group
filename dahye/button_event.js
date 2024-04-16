@@ -22,24 +22,25 @@ btn_num()
 
 // function button_utill() {
 // 덧셈 버튼
+
 let operate_plus = document.getElementById("btn43").addEventListener("click",
-    function () {
+function () {
         if (!isNaN(text[text.length-1])) {
             text += "+";
             document.getElementById("display").innerHTML = text;
         } else if (text.includes(")") == true || text.includes("(") == true) {
             text += "+";
             document.getElementById("display").innerHTML = text;
-
+            
         } else {
             text += "";
             document.getElementById("display").innerHTML = text;
-
+            
         }
     })
-
-// 뺄셈 버튼
-let operate_minus = document.getElementById("btn45").addEventListener("click",
+    
+    // 뺄셈 버튼
+    let operate_minus = document.getElementById("btn45").addEventListener("click",
     function () {
         if (!isNaN(text[text.length-1])) {
             text += "-";
@@ -47,26 +48,26 @@ let operate_minus = document.getElementById("btn45").addEventListener("click",
         }
     })
 
-// 곱하기 버튼
-let operate_multiple = document.getElementById("btn88").addEventListener("click",
+    // 곱하기 버튼
+    let operate_multiple = document.getElementById("btn88").addEventListener("click",
     function () {
         if (!isNaN(text[text.length-1])) {
             text += "x";
             document.getElementById("display").innerHTML = text;
         }
     })
-
-// 나누기 버튼
-let operate_divide = document.getElementById("btn47").addEventListener("click",
+    
+    // 나누기 버튼
+    let operate_divide = document.getElementById("btn47").addEventListener("click",
     function () {
         if (!isNaN(text[text.length-1])) {
             text += "&divide";
             document.getElementById("display").innerHTML = text;
         }
     })
-
-// 점 버튼
-let operate_dot = document.getElementById("btn46").addEventListener("click",
+    
+    // 점 버튼
+    let operate_dot = document.getElementById("btn46").addEventListener("click",
     function () {
         if (!isNaN(text[text.length-1])) {
             text += ".";
@@ -74,49 +75,53 @@ let operate_dot = document.getElementById("btn46").addEventListener("click",
         }
     })
 
-// 지우기 버튼
-let operate_delete = document.getElementById("btn98").addEventListener("click",
+    // 지우기 버튼
+    let operate_delete = document.getElementById("btn98").addEventListener("click",
     function () {
         text = text.slice(0, -1);
         document.getElementById("display").innerHTML = text;
     })
-
-// C 버튼
-let operate_clear = document.getElementById("btn67").addEventListener("click",
+    
+    // C 버튼
+    let operate_clear = document.getElementById("btn67").addEventListener("click",
     function () {
         text = [];
         document.getElementById("display").innerHTML = text;
     })
-
-// 괄호 열기 버튼
-let operate_open = document.getElementById("btn40").addEventListener("click",
+    
+    // 괄호 열기 버튼
+    let operate_open = document.getElementById("btn40").addEventListener("click",
     function () {
         text += "(";
         document.getElementById("display").innerHTML = text;
     })
-
-// 괄호 닫기 버튼
-let operate_close = document.getElementById("btn41").addEventListener("click",
+    
+    // 괄호 닫기 버튼
+    let operate_close = document.getElementById("btn41").addEventListener("click",
     function () {
         if (text.includes("(") ==true) {
-        text += ")";
-        document.getElementById("display").innerHTML = text;
+            text += ")";
+            document.getElementById("display").innerHTML = text;
         }
     })
-
-// equal 버튼
-let equal = document.getElementById("btn61").addEventListener("click",
+    
+    // equal 버튼
+    let equal = document.getElementById("btn61").addEventListener("click",
     function () {
         if (!isNaN(text[text.length-1])) {
-        text += "=";
-        document.getElementById("display").innerHTML = text;
-    }  else if (text.includes(")") == true) {
-        text += "=";
-        document.getElementById("display").innerHTML = text;
-    }
-})
-// }
+            text += "=";
+            document.getElementById("display").innerHTML = text;
+        }  else if (text.includes(")") == true) {
+            text += "=";
+            document.getElementById("display").innerHTML = text;
+        }
+    })
+    // }
 
+    let text2 = "2+2="
+    
+    export {text2};
+    export {text, operate_plus, operate_minus, operate_multiple, operate_divide, operate_dot, operate_delete, operate_clear, operate_open, operate_close, equal};
 
 
 
