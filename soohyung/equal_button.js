@@ -30,7 +30,7 @@ const equal_cal = {
     },
 
     convert_to_arr: function convert_to_arr(modify) {
-        return modify.match(/\d+|\+|\-|\*|\/|\(|\)/g);
+        return modify.match(/\d*\.?\d+|\+|\-|\*|\/|\(|\)/g);
     },
 
     priority_fn: function priority_fn(priority) {
@@ -81,7 +81,7 @@ const equal_cal = {
 
         for (let i = 0; i < postfix_result.length; i++) {
             if (!isNaN(postfix_result[i])) {
-                stack.push(parseInt(postfix_result[i]));
+                stack.push(parseFloat(postfix_result[i]));
             } else {
                 let num2 = stack.pop();
                 let num1 = stack.pop();
@@ -100,7 +100,7 @@ const equal_cal = {
     }
 }
 
-let a = "(1+2)(3+4)="
+
 
 function equal_bt_click (modify) {
     modify = equal_cal.sym_change(modify);
@@ -109,7 +109,5 @@ function equal_bt_click (modify) {
     let modify2 = equal_cal.convert_to_arr(modify);
     let modify3 = equal_cal.convert_to_post(modify2);
     let result = equal_cal.cal_postfix(modify3);
-    console.log(result);
 }
 
-equal_bt_click(a)
