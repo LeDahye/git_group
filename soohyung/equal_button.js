@@ -1,10 +1,10 @@
 
 
-import {
-    text, operate_plus, operate_minus, operate_multiple, operate_divide,
-    operate_dot, operate_delete, operate_clear, operate_open, operate_close, equal
-} from '../dahye/button_event.js';
-import { text2 } from '../dahye/button_event.js';
+// import {
+//     text, btn_num, operate_plus, operate_minus, operate_multiple, operate_divide,
+//     operate_dot, operate_delete, operate_clear, operate_open, operate_close, equal
+// } from '../dahye/button_event.js';
+
 
 const equal_cal = {
     sym_change: function sym_change(modify) {
@@ -110,9 +110,8 @@ function equal_bt_click(modify) {
     modify = equal_cal.del_equal_bt(modify);
     let modify2 = equal_cal.convert_to_arr(modify);
     let modify3 = equal_cal.convert_to_post(modify2);
-    // result = equal_cal.cal_postfix(modify3);
-    // console.log(result);
+    let result = equal_cal.cal_postfix(modify3);
+    console.log(result);
 }
 
-// console.log(text2);
-equal_bt_click(text2);
+export { equal_cal, equal_bt_click};
