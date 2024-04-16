@@ -31,6 +31,7 @@ function btn_num_click() {
 btn_num_key()
 btn_num_click()
 
+
 // 덧셈 버튼
 function plusBt() {
 
@@ -101,7 +102,6 @@ plusBt();
 
 //         }
 //     })
-
 // 뺄셈 버튼
 let operate_minus = document.getElementById("btn45").addEventListener("click",
     function () {
@@ -148,8 +148,24 @@ let operate_delete = document.getElementById("btn98").addEventListener("click",
 // C 버튼
 let operate_clear = document.getElementById("btn67").addEventListener("click",
     function () {
-        text = "";
+        text = [];
         document.getElementById("display2").innerHTML = text;
+    })
+
+// 괄호 열기 버튼
+let operate_open = document.getElementById("btn40").addEventListener("click",
+    function () {
+        text += "(";
+        document.getElementById("display2").innerHTML = text;
+    })
+
+// 괄호 닫기 버튼
+let operate_close = document.getElementById("btn41").addEventListener("click",
+    function () {
+        if (text.includes("(") == true) {
+            text += ")";
+            document.getElementById("display2").innerHTML = text;
+        }
     })
 
 // equal 버튼
@@ -164,15 +180,3 @@ let equal = document.getElementById("btn61").addEventListener("click",
         }
         document.getElementById("display1").innerHTML = equal_bt_click(text);
     })
-
-
-
-// const operate_arr = ["=", "-", "x", "&divide", "(", ")", ".", "b", "C", "+"]
-
-// for (let x of operate_arr) {
-//     document.getElementById(`btn${x.charCodeAt(0)}`).addEventListener("click",
-//         () => {
-//             text += x;
-//             document.getElementById("display2").innerHTML = text;
-//         })
-// }
