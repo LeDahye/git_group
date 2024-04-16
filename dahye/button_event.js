@@ -131,8 +131,6 @@ let equal = document.getElementById("btn61").addEventListener("click",
 btn_num()
 
 
-
-
 // // let operate = document.getElementById("display");
 // // operate_arr.forEach( function(arr) {
 
