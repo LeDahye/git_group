@@ -23,148 +23,150 @@ btn_num_click()
 
 //////////////////////////* ↓↓↓ 연산자 click 이벤트 ↓↓↓ *//////////////////////////
 // 덧셈 버튼
-document.getElementById("btn43").addEventListener('click', function () {
-    let display1 = document.getElementById("display1");
-    let display2 = document.getElementById("display2");
-    let text = display2.innerHTML;
+function operator() {
+    document.getElementById("btn43").addEventListener('click', function () {
+        let display1 = document.getElementById("display1");
+        let display2 = document.getElementById("display2");
+        let text = display2.innerHTML;
 
-    if (display1.innerHTML !== '' && display2.innerHTML !== '') {
-        display2.innerHTML = display1.innerHTML;
-        display1.innerHTML = '';
-        display2.innerHTML += '+';
-    } else {
-        if (!isNaN(text[text.length - 1])) {
-            text += "+";
-            document.getElementById("display2").innerHTML = text;
-        } else if (text.includes(")") === true || text.includes("(") === true) {
-            text += "+";
-            document.getElementById("display2").innerHTML = text;
+        if (display1.innerHTML !== '' && display2.innerHTML !== '') {
+            display2.innerHTML = display1.innerHTML;
+            display1.innerHTML = '';
+            display2.innerHTML += '+';
         } else {
-            text += "";
+            if (!isNaN(text[text.length - 1])) {
+                text += "+";
+                document.getElementById("display2").innerHTML = text;
+            } else if (text.includes(")") === true || text.includes("(") === true) {
+                text += "+";
+                document.getElementById("display2").innerHTML = text;
+            } else {
+                text += "";
+                document.getElementById("display2").innerHTML = text;
+            }
+        }
+    });
+
+    // 뺄셈, 음수 버튼
+    document.getElementById("btn45").addEventListener("click", function () {
+        let display1 = document.getElementById("display1");
+        let display2 = document.getElementById("display2");
+        let text = display2.innerHTML;
+
+        if (display1.innerHTML !== '' && display2.innerHTML !== '') {
+            display2.innerHTML = display1.innerHTML;
+            display1.innerHTML = '';
+            display2.innerHTML += '-';
+        } if (text[text.length - 1] !== '-') {
+            text += "-";
             document.getElementById("display2").innerHTML = text;
         }
-    }
-});
+    });
 
-// 뺄셈, 음수 버튼
-document.getElementById("btn45").addEventListener("click", function () {
-    let display1 = document.getElementById("display1");
-    let display2 = document.getElementById("display2");
-    let text = display2.innerHTML;
+    // 곱하기 버튼
+    document.getElementById("btn120").addEventListener("click", function () {
+        let display1 = document.getElementById("display1");
+        let display2 = document.getElementById("display2");
+        let text = display2.innerHTML;
 
-    if (display1.innerHTML !== '' && display2.innerHTML !== '') {
-        display2.innerHTML = display1.innerHTML;
-        display1.innerHTML = '';
-        display2.innerHTML += '-';
-    } if (text[text.length - 1] !== '-') {
-        text += "-";
+        if (display1.innerHTML !== '' && display2.innerHTML !== '') {
+            display2.innerHTML = display1.innerHTML;
+            display1.innerHTML = '';
+            display2.innerHTML += 'x';
+        } else {
+            if (!isNaN(text[text.length - 1])) {
+                text += "x";
+                document.getElementById("display2").innerHTML = text;
+            }
+        }
+    });
+
+    // 나누기 버튼
+    document.getElementById("btn38").addEventListener("click", function () {
+        let display1 = document.getElementById("display1");
+        let display2 = document.getElementById("display2");
+        let text = display2.innerHTML;
+
+        if (display1.innerHTML !== '' && display2.innerHTML !== '') {
+            display2.innerHTML = display1.innerHTML;
+            display1.innerHTML = '';
+            display2.innerHTML += '÷';
+        } else {
+            if (!isNaN(text[text.length - 1])) {
+                text += "&divide";
+                document.getElementById("display2").innerHTML = text;
+            }
+        }
+    });
+
+    //////////////////////////* ↑↑↑ 연산자 click 이벤트 ↑↑↑ *//////////////////////////
+
+    // 점 버튼
+    document.getElementById("btn46").addEventListener("click", function () {
+        let display1 = document.getElementById("display1");
+        let display2 = document.getElementById("display2");
+        let text = display2.innerHTML;
+
+        if (display1.innerHTML !== '' && display2.innerHTML !== '') {
+            display2.innerHTML = display1.innerHTML;
+            display1.innerHTML = '';
+            display2.innerHTML += '.';
+        } else {
+            if (!isNaN(text[text.length - 1])) {
+                text += ".";
+                document.getElementById("display2").innerHTML = text;
+            }
+        }
+    });
+
+    // 괄호 열기 버튼
+    document.getElementById("btn40").addEventListener("click", function () {
+        let text = document.getElementById("display2").innerHTML;
+        text += "(";
         document.getElementById("display2").innerHTML = text;
-    }
-});
+    });
 
-// 곱하기 버튼
-document.getElementById("btn120").addEventListener("click", function () {
-    let display1 = document.getElementById("display1");
-    let display2 = document.getElementById("display2");
-    let text = display2.innerHTML;
+    // 괄호 닫기 버튼
+    document.getElementById("btn41").addEventListener("click", function () {
+        let text = document.getElementById("display2").innerHTML;
+        if (text.includes("(") == true) {
+            text += ")";
+            document.getElementById("display2").innerHTML = text;
+        }
+    });
 
-    if (display1.innerHTML !== '' && display2.innerHTML !== '') {
-        display2.innerHTML = display1.innerHTML;
+    // delete 지우기 버튼
+    document.getElementById("btn98").addEventListener("click", function () {
+        let text = document.getElementById("display2").innerHTML;
+        text = text.slice(0, -1);
+        document.getElementById("display2").innerHTML = text;
+    });
+
+    // Clear 버튼
+    document.getElementById("btn67").addEventListener("click", function () {
+        let display1 = document.getElementById("display1");
+        let display2 = document.getElementById("display2");
+
         display1.innerHTML = '';
-        display2.innerHTML += 'x';
-    } else {
+        display2.innerHTML = '';
+    });
+
+    // equal 버튼 (결과값 도출)
+    document.getElementById("btn61").addEventListener("click", function () {
+        let text = document.getElementById("display2").innerHTML;
         if (!isNaN(text[text.length - 1])) {
-            text += "x";
+            text += "=";
+            document.getElementById("display2").innerHTML = text;
+        } else if (text.includes(")") == true) {
+            text += "=";
             document.getElementById("display2").innerHTML = text;
         }
-    }
-});
+        document.getElementById("display1").innerHTML = equal_bt_click(text);
 
-// 나누기 버튼
-document.getElementById("btn38").addEventListener("click", function () {
-    let display1 = document.getElementById("display1");
-    let display2 = document.getElementById("display2");
-    let text = display2.innerHTML;
+    });
+}
 
-    if (display1.innerHTML !== '' && display2.innerHTML !== '') {
-        display2.innerHTML = display1.innerHTML;
-        display1.innerHTML = '';
-        display2.innerHTML += '÷';
-    } else {
-        if (!isNaN(text[text.length - 1])) {
-            text += "&divide";
-            document.getElementById("display2").innerHTML = text;
-        }
-    }
-});
-
-//////////////////////////* ↑↑↑ 연산자 click 이벤트 ↑↑↑ *//////////////////////////
-
-// 점 버튼
-document.getElementById("btn46").addEventListener("click", function () {
-    let display1 = document.getElementById("display1");
-    let display2 = document.getElementById("display2");
-    let text = display2.innerHTML;
-
-    if (display1.innerHTML !== '' && display2.innerHTML !== '') {
-        display2.innerHTML = display1.innerHTML;
-        display1.innerHTML = '';
-        display2.innerHTML += '.';
-    } else {
-        if (!isNaN(text[text.length - 1])) {
-            text += ".";
-            document.getElementById("display2").innerHTML = text;
-        }
-    }
-});
-
-// 괄호 열기 버튼
-document.getElementById("btn40").addEventListener("click", function () {
-    let text = document.getElementById("display2").innerHTML;
-    text += "(";
-    document.getElementById("display2").innerHTML = text;
-});
-
-// 괄호 닫기 버튼
-document.getElementById("btn41").addEventListener("click", function () {
-    let text = document.getElementById("display2").innerHTML;
-    if (text.includes("(") == true) {
-        text += ")";
-        document.getElementById("display2").innerHTML = text;
-    }
-});
-
-// delete 지우기 버튼
-document.getElementById("btn98").addEventListener("click", function () {
-    let text = document.getElementById("display2").innerHTML;
-    text = text.slice(0, -1);
-    document.getElementById("display2").innerHTML = text;
-});
-
-// Clear 버튼
-document.getElementById("btn67").addEventListener("click", function () {
-    let display1 = document.getElementById("display1");
-    let display2 = document.getElementById("display2");
-
-    display1.innerHTML = '';
-    display2.innerHTML = '';
-});
-
-// equal 버튼 (결과값 도출)
-document.getElementById("btn61").addEventListener("click", function () {
-    let text = document.getElementById("display2").innerHTML;
-    if (!isNaN(text[text.length - 1])) {
-        text += "=";
-        document.getElementById("display2").innerHTML = text;
-    } else if (text.includes(")") == true) {
-        text += "=";
-        document.getElementById("display2").innerHTML = text;
-    }
-    document.getElementById("display1").innerHTML = equal_bt_click(text);
-
-});
-
-export { equal_bt_click };
+export { btn_num_click, operator };
 
 
 
