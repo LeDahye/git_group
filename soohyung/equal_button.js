@@ -18,19 +18,24 @@ const equal_cal = {
         return temp;
     },
 
-    addX: function addx (modify) {
+    addX: function addx(modify) {
         return modify.replace(/\)\(/g, ')*(');
     },
 
+    // -5 (+) -5 = -10
+    addPlus: function addPlus(modify) {
+        return modify = modify.replace(/(?<=\d)(-)(?=\d)/g, '+-')
+    },
+
     del_equal_bt: function del_equal_bt(modify) {
-        if (modify[modify.length - 1]  === '=') {
+        if (modify[modify.length - 1] === '=') {
             return modify.slice(0, -1);
         }
         return modify;
     },
 
     convert_to_arr: function convert_to_arr(modify) {
-        return modify.match(/\d*\.?\d+|\+|\-|\*|\/|\(|\)/g);
+        return modify.match(/(?:\d+\.\d+|\d+|-?\d+|\+|\-|\*|\/|\(|\))/g);
     },
 
     priority_fn: function priority_fn(priority) {
@@ -101,9 +106,10 @@ const equal_cal = {
 }
 
 
-function equal_bt_click (modify) {
+function equal_bt_click(modify) {
     modify = equal_cal.sym_change(modify);
-    modify = equal_cal.addX(modify)
+    modify = equal_cal.addX(modify);
+    modify = equal_cal.addPlus(modify);
     modify = equal_cal.del_equal_bt(modify);
     modify = equal_cal.convert_to_arr(modify);
     modify = equal_cal.convert_to_post(modify);
@@ -113,4 +119,4 @@ function equal_bt_click (modify) {
 
 
 
-export {equal_bt_click};
+export { equal_bt_click };
