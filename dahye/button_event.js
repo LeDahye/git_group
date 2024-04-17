@@ -1,5 +1,23 @@
 import { equal_bt_click } from '../soohyung/equal_button.js';
 
+// display1(결과값)에서 숫자 입력 시 display2로  숫자 초기화 입력
+function btn_num_click() {
+    for (let i = 0; i < 10; i++) {
+        document.getElementById(`btn${i}`).addEventListener('click',
+            function () {
+                // let display1 = document.getElementById("display1");
+                // let display2 = document.getElementById("display2");
+                let text = display2.innerHTML;
+                if (display1.innerHTML !== '' && display2.innerHTML !== '') {
+                    display2.innerHTML = `${i}`;
+                    display1.innerHTML = '';
+                } else {
+                    display2.innerHTML += `${i}`;
+                }
+            });
+    }
+}
+
 // 키보드
 function btn_num_key() {
     for (let i = 0; i < 10; i++) {
@@ -14,19 +32,6 @@ function btn_num_key() {
     }
 }
 
-// 마우스
-function btn_num_click() {
-    for (let i = 0; i < 10; i++) {
-        // Id = 지훈 인터페이스 숫자 값
-        document.getElementById(`btn${i}`).addEventListener("click",
-            function () {
-                let text = document.getElementById("display2").innerHTML;
-                text += i;
-                // Id = 선웅 디스플레이 값
-                document.getElementById("display2").innerHTML = text;
-            })
-    }
-}
 
 btn_num_key()
 btn_num_click()
@@ -132,18 +137,20 @@ document.getElementById("btn46").addEventListener("click", function () {
 });
 
 
-// 지우기 버튼
+// delete 지우기 버튼
 document.getElementById("btn98").addEventListener("click", function () {
+    let text = document.getElementById("display2").innerHTML;
+    text = text.slice(0, -1);
+    document.getElementById("display2").innerHTML = text;
+});
+
+// Clear 버튼
+document.getElementById("btn67").addEventListener("click", function () {
     let display1 = document.getElementById("display1");
     let display2 = document.getElementById("display2");
 
     display1.innerHTML = '';
     display2.innerHTML = '';
-});
-
-// C 버튼
-document.getElementById("btn67").addEventListener("click", function () {
-    document.getElementById("display2").innerHTML = [];
 });
 
 // 괄호 열기 버튼
