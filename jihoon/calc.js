@@ -3,7 +3,6 @@ class Make_box{
     constructor(type,El_name,parent) {
         this.type = type;
         this.El_name = El_name
-        this.parent = parent
     }
     make() {
         const El = document.createElement(this.type)
@@ -75,9 +74,7 @@ function css_set() {
     
 }
 
-//테스트=================================================
-// const insert_test = new insert_box("container","test")
-//테스트==================================================
+
 
 const history_box = new Make_box("div","history_box")
 
@@ -90,11 +87,22 @@ const main_container = new Make_box("div", "container")
 const num_button = new make_num_button("button","btn","pad_box")
 
 const operator_button = new make_operator_button("button", "btn operate", "pad_box")
-// history_box()
+
+const insert_display = new insert_box("container","dis_container")
+
+const display_box = new Make_box("div", "dis_container")
+
 pad_box.make()
 main_container.make()
 insert_PinC.insert_box()
 num_button.make()
 operator_button.make()
+display_box.make()
+insert_display.insert_box()
 css_set()
+
+
+
+
+
 // export {pad_box,num_button,operator_button,main_container,insert_PinC,css_set,insert_test,history_box }

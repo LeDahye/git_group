@@ -50,11 +50,10 @@ class Calculator {
 // Calculator 객체 생성
 const calculator1 = new Calculator();
 
-const display1 = document.getElementById("display1")
-document.getElementById("container").appendChild(display1)
-
 const display2 = document.getElementById("display2")
-document.getElementById("container").appendChild(display2)
+document.getElementById("dis_container").appendChild(display2)
+const display1 = document.getElementById("display1")
+document.getElementById("dis_container").appendChild(display1)
 
 
 
