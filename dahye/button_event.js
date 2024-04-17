@@ -1,6 +1,6 @@
 import { equal_cal, equal_bt_click } from '../soohyung/equal_button.js';
 
-let text = [];
+let text = "";
 
 // 키보드
 function btn_num_key() {
@@ -34,7 +34,6 @@ btn_num_click()
 
 // 덧셈 버튼
 function plusBt() {
-
     document.getElementById("btn43").addEventListener('click', function () {
         let d1 = display1.innerHTML;
         let d2 = display2.innerHTML;
@@ -60,48 +59,7 @@ function plusBt() {
     })
 }
 plusBt();
-// let operate_plus = document.getElementById("btn43").addEventListener("click",
-//     function () {
-//         let d1 = display1.innerHTML;
-//         let d2 = display2.innerHTML;
 
-//         if (d1 !== '' && d2 !== '') {
-//             let display1Text = display1.innerHTML;
-//             display2.innerHTML = display1Text;
-//             display1.innerHTML = '';
-//         } else {
-//             text += "+";
-//             document.getElementById("display2").innerHTML = text;
-//         }
-//     })
-
-// let operate_plus2 = document.getElementById("btn43").addEventListener("click",
-//     function () {
-//         // let d1 = display1.innerHTML;
-//         // let d2 = display2.innerHTML;
-
-//         // if (d1 !== '' && d2 !== '') {
-//         //     let display1Text = display1.innerHTML;
-//         //     display2.innerHTML = display1Text;
-//         //     display1.innerHTML = '';
-//         // } else {
-//         //     text += "+";
-//         //     document.getElementById("display2").innerHTML = text;
-//         // }
-
-//         if (!isNaN(text[text.length-1])) {
-//             text += "+";
-//             document.getElementById("display2").innerHTML = text;
-//         } else if (text.includes(")") == true || text.includes("(") == true) {
-//             text += "+";
-//             document.getElementById("display2").innerHTML = text;
-
-//         } else {
-//             text += "";
-//             document.getElementById("display2").innerHTML = text;
-
-//         }
-//     })
 // 뺄셈 버튼
 let operate_minus = document.getElementById("btn45").addEventListener("click",
     function () {
@@ -179,4 +137,10 @@ let equal = document.getElementById("btn61").addEventListener("click",
             document.getElementById("display2").innerHTML = text;
         }
         document.getElementById("display1").innerHTML = equal_bt_click(text);
+        return
     })
+
+
+
+
+    export {equal_bt_click, text};
