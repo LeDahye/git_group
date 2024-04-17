@@ -27,10 +27,10 @@ const calc_main = {
 
     },
     //연산자버튼 생성 함수
-    make_operate_pad: function (tagName, operate) {
+    make_operate_pad: function (tagName, operate,parent) {
         for (x of operate) {
             const El = makeELtool(tagName, x, `btn${x.charCodeAt(0)}`,"btn")
-            document.querySelector(".container").appendChild(El)
+            document.querySelector(parent).appendChild(El)
         }
 
     },
@@ -56,7 +56,6 @@ const calc_main = {
     css_set: function () {
         document.getElementById("btn98").innerHTML = "<img src=\".././jihoon/back.png\"></img>"
         document.getElementById("btn38").innerHTML = "<img src=\".././jihoon/division.png\"></img>"
-
     },
 }
 
@@ -71,9 +70,7 @@ function makeELtool(tag, text, idname,claaname) {
     tagEl.appendChild(textEl);
     tagEl.id = idname
     tagEl.className = claaname
-
     return tagEl
-
 }
 
 
