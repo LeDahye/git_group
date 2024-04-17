@@ -55,7 +55,7 @@ document.getElementById("btn45").addEventListener("click", function () {
     if (display1.innerHTML !== '' && display2.innerHTML !== '') {
         display2.innerHTML = display1.innerHTML;
         display1.innerHTML = '';
-        // display2.innerHTML += '-';
+        display2.innerHTML += '-';
     } if (text[text.length - 1] !== '-') {
         text += "-";
         document.getElementById("display2").innerHTML = text;
