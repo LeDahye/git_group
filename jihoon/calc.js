@@ -91,7 +91,8 @@ const operator_button = new make_operator_button("button", "btn operate", "pad_b
 const insert_display = new insert_box("container","dis_container")
 
 const display_box = new Make_box("div", "dis_container")
-
+ 
+function ui(){
 pad_box.make()
 main_container.make()
 insert_PinC.insert_box()
@@ -100,9 +101,6 @@ operator_button.make()
 display_box.make()
 insert_display.insert_box()
 css_set()
+}
 
-
-
-
-
-// export {pad_box,num_button,operator_button,main_container,insert_PinC,css_set,insert_test,history_box }
+export default ui

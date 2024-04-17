@@ -16,7 +16,6 @@ function btn_num_click() {
             });
     }
 }
-btn_num_click()
 
 ///////////////////////////* ↑↑↑ 숫자 click 이벤트 ↑↑↑ *///////////////////////////
 
@@ -161,8 +160,6 @@ function operator() {
             text += "=";
             document.getElementById("display2").innerHTML = text;
         }
-        document.getElementById("display1").innerHTML = equal_bt_click(text);
-
     });
 }
 
