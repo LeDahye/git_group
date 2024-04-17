@@ -1,4 +1,4 @@
-.btn {
+.btn{
     all: unset;
     width: 80px;
     height: 60px;
@@ -11,71 +11,52 @@
     font-weight: 600;
     cursor: pointer;
 }
-
 img {
     width: 40%;
     user-select: none;
 }
-
-#pad_box {
+#pad_box{
     display: grid;
     gap: 2px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-template-areas:
-
-        "a b c d"
-        "e f g h"
-        "i j k l"
-        "m n o p"
-        "q r s t";
+        
+    "a b c d"
+    "e f g h"
+    "i j k l"
+    "m n o p"
+    "q r s t";
 }
-
-body {
+body{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background: linear-gradient(rgb(198, 131, 183), rgb(86, 110, 196));
 }
-
-#dis_container {
-    border: 1px black solid;
-}
-
 #display1,
-#display2 {
-    width: 280px;
-    height: 40px;
-    line-height: 50px;
+#display2{
+    width: 350px;
+    height: 50px;
     background-color: rgb(255, 255, 255);
-    text-align: right;
-    padding: 0 25px;
+
+    
+    
 }
 
-#display2 {    
-    font-size: 20px;
-    padding-top: 5px;
-    color: rgb(90, 89, 89);
-}
-
-#display1 {    
-    font-size: 35px;
-    padding-bottom: 20px;
-}
-
-#container {
+#container{
     display: flex;
     align-content: space-evenly;
     justify-content: space-evenly;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     height: 500px;
     width: 370px;
     border-radius: 10px;
-    border: 3px solid rgb(56, 54, 94);
+    border:3px solid rgb(56, 54, 94);
     background: linear-gradient(rgb(198, 131, 183), rgb(86, 110, 196));
-
+    
 }
 
 
