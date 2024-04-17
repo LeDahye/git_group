@@ -44,7 +44,7 @@ const calc_main = {
     make_num_pad: function (pad_tagName) {
 
         for (let i = 0; i < 10; i++) {
-            const El = makeELtool(pad_tagName, i, `btn${i}`,"btn");
+            const El = makeELtool(pad_tagName, i, `btn${i}`,"btn NumBtn");
             document.querySelector(".container").appendChild(El)
         }
     },

@@ -2,20 +2,20 @@
 
 const equal_cal = {
     sym_change: function sym_change(modify) {
-        let modify1 = '';
+        let temp = '';
         for (let i = 0; i < modify.length; i++) {
             switch (modify[i]) {
                 case 'x':
-                    modify1 += '*';
+                    temp += '*';
                     break;
                 case '÷':
-                    modify1 += '/';
+                    temp += '/';
                     break;
                 default:
-                    modify1 += modify[i];
+                    temp += modify[i];
             }
         }
-        return modify1;
+        return temp;
     },
 
     addX: function addx (modify) {
@@ -101,16 +101,16 @@ const equal_cal = {
 }
 
 
-
 function equal_bt_click (modify) {
     modify = equal_cal.sym_change(modify);
     modify = equal_cal.addX(modify)
     modify = equal_cal.del_equal_bt(modify);
-    let modify2 = equal_cal.convert_to_arr(modify);
-    let modify3 = equal_cal.convert_to_post(modify2);
-    return equal_cal.cal_postfix(modify3);
+    modify = equal_cal.convert_to_arr(modify);
+    modify = equal_cal.convert_to_post(modify);
+    return equal_cal.cal_postfix(modify);
+
 }
 
 
 
-export { equal_cal, equal_bt_click};
+export {equal_bt_click};
