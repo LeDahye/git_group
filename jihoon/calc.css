@@ -85,10 +85,21 @@ body {
     
 }
 .btn:hover{
-    background-color: rgb(236, 158, 232);
-    transition: 0.35s;
+    /* background-color: rgb(236, 158, 232); */
+    background:linear-gradient(rgb(236, 158, 232),rgb(95, 191, 255));
+    transition: 0.02s;
     border-color: rgb(255, 255, 255);
+    scale: 1.05;
 }
+.btn:not(:hover){
+            transition: 0.4s;
+            border-color: rgb(83,
+                46,
+                108);
+
+}
+
+
 
 #container {
     display: flex;
@@ -246,6 +257,7 @@ body {
 @keyframes fade{
     from{
         color: white;
+        
     }
     90%{
         color: rgb(230, 230, 230);
@@ -255,5 +267,6 @@ body {
     }
     to{
         color: black;
+        
     }
 }
