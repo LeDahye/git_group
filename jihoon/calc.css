@@ -8,8 +8,10 @@
     background-color: rgb(190, 176, 238);
     border-radius: 10%;
     border: 3px solid rgb(83, 46, 108);
-    font-weight: 600;
+ 
     cursor: pointer;
+    font-weight: 800;
+    
 }
 
 img {
@@ -36,7 +38,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(rgb(209, 52, 117), rgb(86, 110, 196));
+    background: linear-gradient(rgb(221, 83, 141), rgb(86, 110, 196));
 }
 
 #dis_container {
@@ -69,7 +71,23 @@ body {
 .btn:active {
     scale: 90%;
     background-color: rgb(124, 81, 141);
-    border-color: rgb(255, 255, 255)
+    border-color: rgb(255, 255, 255);
+    color: white;
+    animation: fade 5s ease-out;
+    
+    
+}
+.btn:focus{
+    animation: jelly 0.35s ease-out;
+    font-size: 20px;
+    
+    
+    
+}
+.btn:hover{
+    background-color: rgb(236, 158, 232);
+    transition: 0.35s;
+    border-color: rgb(255, 255, 255);
 }
 
 #container {
@@ -81,12 +99,21 @@ body {
     height: 500px;
     width: 370px;
     border-radius: 10px;
-    border: 4px solid white;
-    background: linear-gradient(rgb(98, 78, 187), rgb(163, 64, 130));
-
+    border: 4px solid rgb(12, 6, 87);
+    
+    
 }
-
-
+#container:hover{
+    scale: 107%;
+    transition: 0.35s;
+    border: 4px solid rgb(255, 255, 255);
+    background: linear-gradient(rgb(98, 78, 187), rgb(163, 64, 130));
+}
+#container:not(:hover) {
+    scale: 100%;
+    transition: 0.5s;
+    
+}
 
 #btn99 {
     /* = 연산자 */
@@ -131,6 +158,9 @@ body {
     grid-area: t;
     color: white;
     background-color: rgb(212, 97, 178);
+}
+#btn61:focus{
+    background: linear-gradient(rgb(128, 202, 252),rgb(125, 84, 221));
 }
 
 #btn45 {
@@ -183,4 +213,47 @@ body {
 
 #btn9 {
     grid-area: g;
+}
+@keyframes jelly {
+    from {
+        transform: scale(1, 1);
+    }
+
+    30% {
+        transform: scale(1.25, 0.75);
+    }
+
+    40% {
+        transform: scale(0.75, 1.25);
+    }
+
+    50% {
+        transform: scale(1.15, 0.85);
+    }
+
+    65% {
+        transform: scale(0.95, 1.05);
+    }
+
+    75% {
+        transform: scale(1.05, 0.95);
+    }
+
+    to {
+        transform: scale(1, 1);
+    }
+}
+@keyframes fade{
+    from{
+        color: white;
+    }
+    90%{
+        color: rgb(230, 230, 230);
+    }
+    70%{
+        color: rgb(190, 190, 190);
+    }
+    to{
+        color: black;
+    }
 }
