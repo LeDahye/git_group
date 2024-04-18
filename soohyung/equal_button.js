@@ -18,12 +18,12 @@ const equal_cal = {
         return temp;
     },
 
-    addX: function addx(modify) {
+    add_x: function add_x(modify) {
         return modify.replace(/\)\(/g, ')*(');
     },
 
     // -5 (+) -5 = -10
-    addPlus: function addPlus(modify) {
+    add_plus: function add_Plus(modify) {
         return modify = modify.replace(/(?<=\d)(-)(?=\d)/g, '+-')
     },
 
@@ -108,8 +108,8 @@ const equal_cal = {
 
 function equal_bt_click(modify) {
     modify = equal_cal.sym_change(modify);
-    modify = equal_cal.addX(modify);
-    modify = equal_cal.addPlus(modify);
+    modify = equal_cal.add_x(modify);
+    modify = equal_cal.add_plus(modify);
     modify = equal_cal.del_equal_bt(modify);
     modify = equal_cal.convert_to_arr(modify);
     modify = equal_cal.convert_to_post(modify);
