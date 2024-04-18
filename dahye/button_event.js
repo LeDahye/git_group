@@ -1,4 +1,4 @@
-import { equal_bt_click } from '../soohyung/equal_button.js';
+import {equal_bt_click} from '../soohyung/equal_button.js';
 
 ///////////////////////////* ↓↓↓ 숫자 click 이벤트 ↓↓↓ *///////////////////////////
 
@@ -56,7 +56,7 @@ function operator() {
             display2.innerHTML = display1.innerHTML;
             display1.innerHTML = '';
             display2.innerHTML += '-';
-        } if (text[text.length - 1] !== '-') {
+        } else if (text[text.length - 1] !== '-') {
             text += "-";
             document.getElementById("display2").innerHTML = text;
         }
@@ -120,15 +120,25 @@ function operator() {
 
     // 괄호 열기 버튼
     document.getElementById("btn40").addEventListener("click", function () {
-        let text = document.getElementById("display2").innerHTML;
-        text += "(";
-        document.getElementById("display2").innerHTML = text;
+        let display1 = document.getElementById("display1");
+        let display2 = document.getElementById("display2");
+        let text = display2.innerHTML;
+        if (display1.innerHTML !== '' && display2.innerHTML !== '') {
+            display2.innerHTML = display1.innerHTML;
+            display1.innerHTML = '';
+        }else if (!isNaN(text[text.length - 1])){
+            // display2.innerHTML += '(';
+
+        } else if (isNaN(text[text.length - 1])) {
+            text += "(";
+            document.getElementById("display2").innerHTML = text;
+        }
     });
 
     // 괄호 닫기 버튼
     document.getElementById("btn41").addEventListener("click", function () {
         let text = document.getElementById("display2").innerHTML;
-        if (text.includes("(") == true) {
+        if (text.includes("(") === true) {
             text += ")";
             document.getElementById("display2").innerHTML = text;
         }
@@ -156,15 +166,14 @@ function operator() {
         if (!isNaN(text[text.length - 1])) {
             text += "=";
             document.getElementById("display2").innerHTML = text;
-        } else if (text.includes(")") == true) {
+        } else if (text.includes(")") === true) {
             text += "=";
             document.getElementById("display2").innerHTML = text;
         }
     });
 }
 
-export { btn_num_click, operator };
-
+export {btn_num_click, operator};
 
 
 // 키보드

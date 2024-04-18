@@ -1,29 +1,33 @@
-class Calculator {
-    constructor(type, id) {
-        // display1 생성
+class Make_box {
+    constructor(type, id,parent) {
+    
         this.display1 = document.createElement(type);
         this.display1.id = id;
-        document.body.appendChild(this.display1);
-    }
-
-}
-
-class Insert {
-    constructor(child) {
-        this.child = child
-        const El = document.getElementById(child)
-        document.getElementById("dis_container").appendChild(El)
+        this.parent = parent;
+        document.querySelector(this.parent).appendChild(this.display1);
     }
 }
 
-function make_dis() {
-    const calculator1 = new Calculator("div", "display1");
-    const Calculator2 = new Calculator("div", "display2");
-    const insert_dis2 = new Insert("display2")
-    const insert_dis1 = new Insert("display1")
-}
 
-export default make_dis
+function make_display() {
+    const dis_container = new Make_box("div","dis_container","#container")
+    const modify_display = new Make_box("div", "display2", "#dis_container");
+    const result_display = new Make_box("div", "display1","#dis_container");
+}
+export default make_display
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
