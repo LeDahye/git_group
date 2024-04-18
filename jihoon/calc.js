@@ -1,13 +1,15 @@
 //Div박스 생성 클래스
 class Make_box{
-    constructor(type,El_name,parent) {
+    constructor(type,El_name,parent,className) {
         this.type = type;
         this.El_name = El_name
         this.parent = parent
+        this.className=className
     }
     make() {
         const El = document.createElement(this.type)
         El.id = this.El_name   
+        El.className=this.className
         document.querySelector(this.parent).appendChild(El)
     }
 }
@@ -59,12 +61,12 @@ function css_set() {
 
 
 
-const history_box = new Make_box("div","history_box","#container")
+// const history_box = new Make_box("div","history_box","#container")
 const pad_box = new Make_box("div", "pad_box","#container")
 const main_container = new Make_box("div", "container","body")
 const num_button = new make_num_button("button","btn","pad_box")
 const operator_button = new make_operator_button("button", "btn operate", "pad_box")
- 
+
 
 
 function ui() {
@@ -73,8 +75,9 @@ main_container.make()
 pad_box.make()
 num_button.make()
 operator_button.make()
-history_box.make()
+// history_box.make()
 css_set()
+    
 }
 
-export default ui
+export { ui, Make_box }

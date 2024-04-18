@@ -1,3 +1,5 @@
+import { equal_bt_click } from '../soohyung/equal_button.js';
+
 ///////////////////////////* ↓↓↓ 숫자 click 이벤트 ↓↓↓ *///////////////////////////
 
 function btn_num_click() {
@@ -40,8 +42,12 @@ function all_operate(operate) {
 function operator(btn_id, event, operate) {
     // 연산자(+, -, x, ÷) 클릭 이벤트
     document.getElementById(btn_id).addEventListener(event, () => { all_operate(operate) });
+}
 
-    // 점 버튼
+
+
+// 점 버튼
+function operator2() {
     document.getElementById("btn46").addEventListener("click", function () {
         let text = display2.innerHTML;
 
@@ -97,8 +103,30 @@ function operator(btn_id, event, operate) {
         if (!isNaN(text[text.length - 1])) {
             text += "=";
             display2.innerHTML = text;
+            document.getElementById("display2").innerHTML = text;
+        } else if (text.includes(")") === true) {
+            text += "=";
+            document.getElementById("display2").innerHTML = text;
+
         }
     });
 }
 
-export { btn_num_click, operator };
+export { btn_num_click, operator, operator2 };
+
+
+// 키보드
+// function btn_num_key() {
+//     for (let i = 0; i < 10; i++) {
+//         // Id = 지훈 인터페이스 숫자 값
+//         document.getElementById(`btn${i}`).addEventListener("keydown",
+//             function (i) {
+//                 let text = document.getElementById("display2").innerHTML;
+//                 text += i.key;
+//                 // Id = 선웅 디스플레이 값
+//                 document.getElementById("display2").innerHTML = text;
+//             })
+//     }
+// }
+// btn_num_key()
+

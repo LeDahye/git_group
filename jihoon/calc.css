@@ -8,7 +8,7 @@
     background-color: rgb(190, 176, 238);
     border-radius: 10%;
     border: 3px solid rgb(83, 46, 108);
- 
+
     cursor: pointer;
     font-weight:600;
     
@@ -68,17 +68,8 @@ body {
     padding-bottom: 20px;
 }
 
-.btn:active {
-    scale: 90%;
-    background-color: rgb(124, 81, 141);
-    border-color: rgb(255, 255, 255);
-    color: white;
-    animation: fade 5s ease-out;
-    
-    
-}
 .btn:focus{
-    animation: jelly 0.35s ease-out;
+    /* animation: jelly 0.35s ease-out; */
     font-size: 20px;
     
     
@@ -90,6 +81,15 @@ body {
     transition: 0.02s;
     border-color: rgb(255, 255, 255);
     scale: 1.05;
+}
+.btn:active {
+    scale: 90%;
+    background-color: rgb(124, 81, 141);
+    border-color: rgb(255, 255, 255);
+    color: white;
+    animation: fade 5s ease-out;
+    
+    
 }
 .btn:not(:hover){
             transition: 0.4s;
@@ -103,6 +103,7 @@ button::selection{
     background-color: unset;
     
 }
+
 
 #container {
     display: flex;
@@ -122,6 +123,7 @@ button::selection{
     transition: 0.35s;
     border: 4px solid rgb(255, 255, 255);
     background: linear-gradient(rgb(98, 78, 187), rgb(163, 64, 130));
+    margin-right: 100px;
 }
 #container:not(:hover) {
     scale: 100%;
