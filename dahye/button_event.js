@@ -104,7 +104,7 @@ function operator2() {
             text += "=";
             display2.innerHTML = text;
             document.getElementById("display2").innerHTML = text;
-        } else if (text.includes(")") === true) {
+        } else if (text.includes(")") === true && text[text.length - 1] !== "=") {
             text += "=";
             document.getElementById("display2").innerHTML = text;
 
