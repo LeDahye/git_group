@@ -1,17 +1,22 @@
+
 #history_box{
     visibility: hidden;
     position: absolute;
     background-color: rgb(246, 255, 255);
-    height: 505px;
+    height: 440px;
     width: 300px;
-    z-index: -3;
+    display: flex;
+    flex-direction: column-reverse;
+    bottom: 60px
     
-    
+}
+#test{
+    display: none;
 }
 #container:hover #history_box{
     visibility: visible;
-    z-index: -3;
     animation: move 0.35s forwards linear;
+    transition: 0.35s;
 }
 
 #history_box button {
@@ -20,29 +25,26 @@
     cursor: pointer;
 }
 
-#history_delete {
-    border: 0px;
-    height: 40px;
-    width: 60px;
-    background-color: white;
-    background-image: url(./delete_button.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-
+#delete_button {
     position: absolute;
-    margin-top: 400px;
-    margin-left: 930px;
+    color: red;
+    line-height: 60px;
+    width: 300px;
+    right: 50px;
 
-    cursor: pointer;
 }
 @keyframes move{
     from{
-        opacity: 0;
+        background-color: rgba(255, 255, 255, 0);
         left: 400px;
     }to{
-        opacity: 0.5;
-        left: 380px;
+        background-color: rgba(255, 255, 255, 0.5);;
+        left: 375px;
         
     }
-
+}
+#test{
+    width: 600px;
+    height: 100px;
+    background-color: aquamarine;
 }
