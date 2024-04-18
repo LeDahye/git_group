@@ -68,17 +68,8 @@ body {
     padding-bottom: 20px;
 }
 
-.btn:active {
-    scale: 90%;
-    background-color: rgb(124, 81, 141);
-    border-color: rgb(255, 255, 255);
-    color: white;
-    animation: fade 5s ease-out;
-    
-    
-}
 .btn:focus{
-    animation: jelly 0.35s ease-out;
+    /* animation: jelly 0.35s ease-out; */
     font-size: 20px;
     
     
@@ -90,6 +81,15 @@ body {
     transition: 0.02s;
     border-color: rgb(255, 255, 255);
     scale: 1.05;
+}
+.btn:active {
+    scale: 90%;
+    background-color: rgb(124, 81, 141);
+    border-color: rgb(255, 255, 255);
+    color: white;
+    animation: fade 5s ease-out;
+    
+    
 }
 .btn:not(:hover){
             transition: 0.4s;

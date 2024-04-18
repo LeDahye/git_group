@@ -64,7 +64,7 @@ const pad_box = new Make_box("div", "pad_box","#container")
 const main_container = new Make_box("div", "container","body")
 const num_button = new make_num_button("button","btn","pad_box")
 const operator_button = new make_operator_button("button", "btn operate", "pad_box")
- 
+
 
 
 function ui() {

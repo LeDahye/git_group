@@ -1,13 +1,20 @@
-#history_container {
-    display: flex;
-    flex-direction: column-reverse;
-    width: 300px;
+#history_box{
+    visibility: hidden;
     position: absolute;
-    margin-left: 700px;
-    margin-top: 50px;
+    background-color: rgb(246, 255, 255);
+    height: 505px;
+    width: 300px;
+    z-index: -3;
+    
+    
+}
+#container:hover #history_box{
+    visibility: visible;
+    z-index: -3;
+    animation: move 0.35s forwards linear;
 }
 
-#history_container button {
+#history_box button {
     height: 60px;
     width: 300px;
     cursor: pointer;
@@ -27,4 +34,15 @@
     margin-left: 930px;
 
     cursor: pointer;
+}
+@keyframes move{
+    from{
+        opacity: 0;
+        left: 400px;
+    }to{
+        opacity: 0.5;
+        left: 380px;
+        
+    }
+
 }
