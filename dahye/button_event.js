@@ -34,6 +34,11 @@ function all_operate(operate) {
     } else if (!isNaN(text[text.length - 1]) || text[text.length - 1] === ')') {
         text += operate;
         display2.innerHTML = text;
+    } else if (operate === "-") {
+        if (text[text.length - 1] === '(') {
+            text += operate;
+            display2.innerHTML = text;
+        }
     }
 }
 
@@ -107,7 +112,12 @@ function operator2() {
         } else if (text.includes(")") === true && text[text.length - 1] !== "=") {
             text += "=";
             document.getElementById("display2").innerHTML = text;
-
+        } else if (!isNaN(text[text.length - 1])) {
+            text += "=";
+            document.getElementById("display2").innerHTML = text;
+        } else if (text[text.length - 1] !== "=") {
+            text += "=";
+            document.getElementById("display2").innerHTML = text;
         }
     });
 }
