@@ -169,26 +169,13 @@ function operator() {
     // equal 버튼 (결과값 도출)
     document.getElementById("btn61").addEventListener("click", function () {
         let text = document.getElementById("display2").innerHTML;
-        let textArr = [...text];
-        let openCount = textArr.filter(e => '(' === e).length;
-        let closeCount = textArr.filter(e => ')' === e).length;
-        let totalCount = openCount + closeCount;
-
-        if (totalCount % 2 === 0 && !isNaN(text[text.length - 1])) {
+        if (!isNaN(text[text.length - 1])) {
             text += "=";
             document.getElementById("display2").innerHTML = text;
-        } else if (totalCount % 2 === 0 && !isNaN(text[text.length - 1]) && text[text.length - 1] === ')') {
+        } else if (text.includes(")") === true) {
             text += "=";
             document.getElementById("display2").innerHTML = text;
         }
-
-        // if (!isNaN(text[text.length - 1])) {
-        //     text += "=";
-        //     document.getElementById("display2").innerHTML = text;
-        // } else if (text[text.length - 1] === ')') {
-        //     text += "=";
-        //     document.getElementById("display2").innerHTML = text;
-        // }
     });
 }
 
