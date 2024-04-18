@@ -1,5 +1,3 @@
-import {equal_bt_click} from '../soohyung/equal_button.js';
-
 ///////////////////////////* ↓↓↓ 숫자 click 이벤트 ↓↓↓ *///////////////////////////
 
 function btn_num_click() {
@@ -24,10 +22,7 @@ function btn_num_click() {
 // 덧셈 버튼
 function operator() {
     document.getElementById("btn43").addEventListener('click', function () {
-        let display1 = document.getElementById("display1");
-        let display2 = document.getElementById("display2");
         let text = display2.innerHTML;
-
         if (display1.innerHTML !== '' && display2.innerHTML !== '') {
             display2.innerHTML = display1.innerHTML;
             display1.innerHTML = '';
@@ -48,8 +43,6 @@ function operator() {
 
     // 뺄셈, 음수 버튼
     document.getElementById("btn45").addEventListener("click", function () {
-        let display1 = document.getElementById("display1");
-        let display2 = document.getElementById("display2");
         let text = display2.innerHTML;
 
         if (display1.innerHTML !== '' && display2.innerHTML !== '') {
@@ -64,8 +57,6 @@ function operator() {
 
     // 곱하기 버튼
     document.getElementById("btn120").addEventListener("click", function () {
-        let display1 = document.getElementById("display1");
-        let display2 = document.getElementById("display2");
         let text = display2.innerHTML;
 
         if (display1.innerHTML !== '' && display2.innerHTML !== '') {
@@ -82,8 +73,6 @@ function operator() {
 
     // 나누기 버튼
     document.getElementById("btn38").addEventListener("click", function () {
-        let display1 = document.getElementById("display1");
-        let display2 = document.getElementById("display2");
         let text = display2.innerHTML;
 
         if (display1.innerHTML !== '' && display2.innerHTML !== '') {
@@ -102,8 +91,6 @@ function operator() {
 
     // 점 버튼
     document.getElementById("btn46").addEventListener("click", function () {
-        let display1 = document.getElementById("display1");
-        let display2 = document.getElementById("display2");
         let text = display2.innerHTML;
 
         if (display1.innerHTML !== '' && display2.innerHTML !== '') {
@@ -120,15 +107,10 @@ function operator() {
 
     // 괄호 열기 버튼
     document.getElementById("btn40").addEventListener("click", function () {
-        let display1 = document.getElementById("display1");
-        let display2 = document.getElementById("display2");
         let text = display2.innerHTML;
         if (display1.innerHTML !== '' && display2.innerHTML !== '') {
             display2.innerHTML = display1.innerHTML;
             display1.innerHTML = '';
-        }else if (!isNaN(text[text.length - 1])){
-            // display2.innerHTML += '(';
-
         } else if (isNaN(text[text.length - 1])) {
             text += "(";
             document.getElementById("display2").innerHTML = text;
@@ -153,9 +135,6 @@ function operator() {
 
     // Clear 버튼
     document.getElementById("btn67").addEventListener("click", function () {
-        let display1 = document.getElementById("display1");
-        let display2 = document.getElementById("display2");
-
         display1.innerHTML = '';
         display2.innerHTML = '';
     });
@@ -165,15 +144,15 @@ function operator() {
         let text = document.getElementById("display2").innerHTML;
         if (!isNaN(text[text.length - 1])) {
             text += "=";
-            document.getElementById("display2").innerHTML = text;
-        } else if (text.includes(")") === true) {
-            text += "=";
-            document.getElementById("display2").innerHTML = text;
-        }
+            document.getElementById("display2").innerHTML = text;}
+        // } else if (text.includes(")") === true) {
+        //     text += "=";
+        //     document.getElementById("display2").innerHTML = text;
+        // }
     });
 }
 
-export {btn_num_click, operator};
+export { btn_num_click, operator };
 
 
 // 키보드
