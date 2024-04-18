@@ -15,6 +15,7 @@ class Insert {
         document.getElementById("dis_container").appendChild(El)
     }
 }
+
 function make_dis() {
     const calculator1 = new Calculator("div", "display1");
     const Calculator2 = new Calculator("div", "display2");
