@@ -6,7 +6,11 @@
     width: 300px;
     display: flex;
     flex-direction: column-reverse;
-    bottom: 60px
+    align-content: flex-end;
+    bottom: 60px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
 }
 
 #test {
@@ -26,24 +30,33 @@
 }
 
 #container:hover #delete_button {
-    animation: move1 1s ease-out;
+    animation: move1 0.35s ease-out forwards;
+    
+}
+.btn_history{
+    line-height: 60px;
 }
 
 #delete_button {
     position: absolute;
-    color: red;
     line-height: 60px;
-    width: 320px;
-    margin-left: 628px;
-    margin-top: 475px;
-    opacity: 1;
+    width: 300px;
+    opacity: 0;
+    left:375px;
+    top:440px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
 
 }
 
 @keyframes move {
     from {
         background-color: rgba(255, 255, 255, 0);
-        left: 400px;
+        left: 375px;
     }
 
     to {
@@ -52,6 +65,10 @@
         left: 375px;
 
     }
+}
+#delete_button_container img{
+    width: 17%;
+    height: 30%;
 }
 
 #test {
@@ -62,10 +79,10 @@
 
 @keyframes move1 {
     from {
-        opacity: 1;
+        opacity: 0;
     }
 
     to {
-        opacity: 0;
+        opacity: 1;
     }
 }

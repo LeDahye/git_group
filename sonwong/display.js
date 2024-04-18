@@ -1,20 +1,20 @@
-class Make_box {
-    constructor(type, id,parent) {
+// class Make_box {
+//     constructor(type, id,parent) {
     
-        this.display1 = document.createElement(type);
-        this.display1.id = id;
-        this.parent = parent;
-        document.querySelector(this.parent).appendChild(this.display1);
-    }
-}
+//         this.display1 = document.createElement(type);
+//         this.display1.id = id;
+//         this.parent = parent;
+//         document.querySelector(this.parent).appendChild(this.display1);
+//     }
+// }
 
 
-function make_display() {
-    const dis_container = new Make_box("div","dis_container","#container")
-    const modify_display = new Make_box("div", "display2", "#dis_container");
-    const result_display = new Make_box("div", "display1","#dis_container");
-}
-export default make_display
+// function make_display() {
+//     const dis_container = new Make_box("div","dis_container","#container")
+//     const modify_display = new Make_box("div", "display2", "#dis_container");
+//     const result_display = new Make_box("div", "display1","#dis_container");
+// // }
+// export default make_display
 
 
 

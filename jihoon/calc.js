@@ -1,15 +1,17 @@
 //Div박스 생성 클래스
 class Make_box{
-    constructor(type,El_name,parent,className) {
+    constructor(type,id,parent,className) {
         this.type = type;
-        this.El_name = El_name
+        this.id = id
         this.parent = parent
         this.className=className
     }
     make() {
         const El = document.createElement(this.type)
-        El.id = this.El_name   
-        El.className=this.className
+        El.id = this.id
+        if (this.className !== undefined) {
+            El.className = this.className
+        }
         document.querySelector(this.parent).appendChild(El)
     }
 }
@@ -61,11 +63,15 @@ function css_set() {
 
 
 
-// const history_box = new Make_box("div","history_box","#container")
+
 const pad_box = new Make_box("div", "pad_box","#container")
 const main_container = new Make_box("div", "container","body")
 const num_button = new make_num_button("button","btn","pad_box")
 const operator_button = new make_operator_button("button", "btn operate", "pad_box")
+
+const dis_container = new Make_box("div", "dis_container", "#container")
+const modify_display = new Make_box("div", "display2", "#dis_container");
+const result_display = new Make_box("div", "display1", "#dis_container");
 
 
 
@@ -74,8 +80,10 @@ function ui() {
 main_container.make()
 pad_box.make()
 num_button.make()
+dis_container.make()
+modify_display.make()
+result_display.make()
 operator_button.make()
-// history_box.make()
 css_set()
     
 }
