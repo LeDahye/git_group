@@ -8,6 +8,7 @@ class Make_box {
     }
 }
 
+
 function make_display() {
     const dis_container = new Make_box("div","dis_container","#container")
     const modify_display = new Make_box("div", "display2", "#dis_container");

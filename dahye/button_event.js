@@ -36,15 +36,18 @@ function operator() {
             if (!isNaN(text[text.length - 1])) {
                 text += "+";
                 document.getElementById("display2").innerHTML = text;
-            } else if (text.includes(")") === true || text.includes("(") === true) {
+            } else if (text[text.length - 1] === ')') {
                 text += "+";
-                document.getElementById("display2").innerHTML = text;
-            } else {
-                text += "";
                 document.getElementById("display2").innerHTML = text;
             }
         }
     });
+
+    /* else if (text.includes(")") === true || text.includes("(") === true) {
+                text += "+";
+                document.getElementById("display2").innerHTML = text;
+            }
+    */
 
     // 뺄셈, 음수 버튼
     document.getElementById("btn45").addEventListener("click", function () {
@@ -56,7 +59,10 @@ function operator() {
             display2.innerHTML = display1.innerHTML;
             display1.innerHTML = '';
             display2.innerHTML += '-';
-        } else if (text[text.length - 1] !== '-') {
+        } else if (!isNaN(text[text.length - 1])) {
+            text += "-";
+            document.getElementById("display2").innerHTML = text;
+        } else if (text[text.length - 1] === ')') {
             text += "-";
             document.getElementById("display2").innerHTML = text;
         }
@@ -73,7 +79,7 @@ function operator() {
             display1.innerHTML = '';
             display2.innerHTML += 'x';
         } else {
-            if (!isNaN(text[text.length - 1])) {
+            if (!isNaN(text[text.length - 1]) || text[text.length - 1] === ')') {
                 text += "x";
                 document.getElementById("display2").innerHTML = text;
             }
@@ -91,7 +97,7 @@ function operator() {
             display1.innerHTML = '';
             display2.innerHTML += '÷';
         } else {
-            if (!isNaN(text[text.length - 1])) {
+            if (!isNaN(text[text.length - 1]) || text[text.length - 1] === ')') {
                 text += "&divide";
                 document.getElementById("display2").innerHTML = text;
             }
