@@ -1,6 +1,8 @@
 class Make_box {
+    // 생성자로 요소 정의
     constructor(type, id,parent) {
-    
+        
+        // 
         this.display1 = document.createElement(type);
         this.display1.id = id;
         this.parent = parent;
