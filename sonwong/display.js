@@ -89,7 +89,7 @@ css_set()
     
 }
 
-export { ui, Make_box }
+export { ui, MakeBox }
 
 
 
