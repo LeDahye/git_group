@@ -18,7 +18,7 @@ class Make_box{
 }
 
 //숫자 패드 생성 클래스
-class make_num_button{
+class Make_num_button{
     constructor(type,className,parent) {
         this.type = type;
         this.className = className
@@ -37,7 +37,7 @@ class make_num_button{
 }
 
 //연산자 패드 생성 클래스
-class make_operator_button extends make_num_button{
+class Make_operator_button extends Make_num_button{
     constructor(type,className,parent) {
         super(type,className,parent)
     }
@@ -67,8 +67,8 @@ function css_set() {
 
 const pad_box = new Make_box("div", "pad_box","#container")
 const main_container = new Make_box("div", "container","body")
-const num_button = new make_num_button("button","btn","pad_box")
-const operator_button = new make_operator_button("button", "btn operate", "pad_box")
+const num_button = new Make_num_button("button","btn","pad_box")
+const operator_button = new Make_operator_button("button", "btn operate", "pad_box")
 
 const dis_container = new Make_box("div", "dis_container", "#container")
 const modify_display = new Make_box("div", "display2", "#dis_container");
