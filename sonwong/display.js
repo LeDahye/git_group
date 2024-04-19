@@ -1,6 +1,6 @@
 
 //Div박스 생성 클래스
-class Make_box{
+class MakeBox{
     constructor(type,id,parent,className) {
         this.type = type;
         this.id = id
@@ -18,7 +18,7 @@ class Make_box{
 }
 
 //숫자 패드 생성 클래스
-class Make_num_button{
+class MakeNumButton{
     constructor(type,className,parent) {
         this.type = type;
         this.className = className
@@ -37,7 +37,7 @@ class Make_num_button{
 }
 
 //연산자 패드 생성 클래스
-class Make_operator_button extends Make_num_button{
+class MakeOperatorButton extends MakeNumButton{
     constructor(type,className,parent) {
         super(type,className,parent)
     }
@@ -65,14 +65,14 @@ function css_set() {
 
 
 
-const pad_box = new Make_box("div", "pad_box","#container")
-const main_container = new Make_box("div", "container","body")
-const num_button = new Make_num_button("button","btn","pad_box")
-const operator_button = new Make_operator_button("button", "btn operate", "pad_box")
+const pad_box = new MakeBox("div", "pad_box","#container")
+const main_container = new MakeBox("div", "container","body")
+const num_button = new MakeNumButton("button","btn","pad_box")
+const operator_button = new MakeOperatorButton("button", "btn operate", "pad_box")
 
-const dis_container = new Make_box("div", "dis_container", "#container")
-const modify_display = new Make_box("div", "display2", "#dis_container");
-const result_display = new Make_box("div", "display1", "#dis_container");
+const dis_container = new MakeBox("div", "dis_container", "#container")
+const modify_display = new MakeBox("div", "display2", "#dis_container");
+const result_display = new MakeBox("div", "display1", "#dis_container");
 
 
 
