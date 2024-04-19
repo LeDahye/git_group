@@ -1,5 +1,3 @@
-import { equal_bt_click } from '../soohyung/equal_button.js';
-
 ///////////////////////////* ↓↓↓ 숫자 click 이벤트 ↓↓↓ *///////////////////////////
 
 function btn_num_click() {
@@ -19,10 +17,6 @@ function btn_num_click() {
 
 ///////////////////////////* ↑↑↑ 숫자 click 이벤트 ↑↑↑ *///////////////////////////
 
-// const oper_plus = new Operator("btn43", "click", "+");
-// oper_plus.listener("btn43", "click", "+")
-
-// class Operator {
 // 연산자 조건
 function all_operate(operate) {
     let text = display2.innerHTML;
@@ -42,14 +36,10 @@ function all_operate(operate) {
     }
 }
 
-// all_operate(operate, `${!isNaN(text[text.length - 1]) || text[text.length - 1] ===')'}`)
-
+// 연산자(+, -, x, ÷) 클릭 이벤트 함수
 function operator(btn_id, event, operate) {
-    // 연산자(+, -, x, ÷) 클릭 이벤트
     document.getElementById(btn_id).addEventListener(event, () => { all_operate(operate) });
 }
-
-
 
 // 점 버튼
 function operator2() {
@@ -105,19 +95,11 @@ function operator2() {
     // equal 버튼 (결과값 도출)
     document.getElementById("btn61").addEventListener("click", function () {
         let text = display2.innerHTML;
-        if (!isNaN(text[text.length - 1])) {
-            text += "=";
-            display2.innerHTML = text;
-            document.getElementById("display2").innerHTML = text;
-        } else if (text.includes(")") === true && text[text.length - 1] !== "=") {
-            text += "=";
-            document.getElementById("display2").innerHTML = text;
-        } else if (!isNaN(text[text.length - 1])) {
-            text += "=";
-            document.getElementById("display2").innerHTML = text;
-        } else if (text[text.length - 1] !== "=") {
-            text += "=";
-            document.getElementById("display2").innerHTML = text;
+        if (text.length > 2) {
+            if (!text.includes("=")) { // 여기서 괄호 추가
+                text += "=";
+                display2.innerHTML = text;
+            }
         }
     });
 }
@@ -131,10 +113,10 @@ export { btn_num_click, operator, operator2 };
 //         // Id = 지훈 인터페이스 숫자 값
 //         document.getElementById(`btn${i}`).addEventListener("keydown",
 //             function (i) {
-//                 let text = document.getElementById("display2").innerHTML;
+//                 let text = display2.innerHTML;
 //                 text += i.key;
 //                 // Id = 선웅 디스플레이 값
-//                 document.getElementById("display2").innerHTML = text;
+//                 display2.innerHTML = text;
 //             })
 //     }
 // }

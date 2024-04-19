@@ -1,11 +1,8 @@
-import { ui } from '../sonwong/calc.js'
+import { ui } from '../sonwong/display.js'
 import { btn_num_click, operator, operator2 } from '../dahye/button_event.js';
-import { equal_bt_click } from '../soohyung/equal_button.js';
-// import { history } from '../jihoon/history.js';
-import { history } from '../jihoon/new.js';
 
-
-
+import { equal_bt_click } from '../soohyung/postfix_calc.js';
+import { history } from '../jihoon/history.js';
 
 
 ui()

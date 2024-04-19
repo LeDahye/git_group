@@ -1,3 +1,4 @@
+
 //Div박스 생성 클래스
 class Make_box{
     constructor(type,id,parent,className) {
@@ -89,3 +90,6 @@ css_set()
 }
 
 export { ui, Make_box }
+
+
+
