@@ -56,8 +56,8 @@ class make_operator_button extends make_num_button{
 }
 
 function css_set() {
-    document.getElementById("btn98").innerHTML = "<img src=\"../jihoon/back.png\"></img>"
-    document.getElementById("btn38").innerHTML = "<img src=\"../jihoon/division.png\"></img>"
+    document.getElementById("btn98").innerHTML = "<img src=\"../sonwong/back.png\"></img>"
+    document.getElementById("btn38").innerHTML = "<img src=\"../sonwong/division.png\"></img>"
     
 }
 

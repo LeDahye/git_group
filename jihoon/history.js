@@ -1,4 +1,4 @@
-import { Make_box } from "../calc.js"
+import { Make_box } from "../sonwong/calc.js"
 
 function history() {
 
@@ -11,7 +11,7 @@ function history() {
     history_box.make()
     delete_button.make()
     delete_imgtag.make()
-    document.querySelector("#delete_img").setAttribute("src","../jihoon/history/trash_can.svg")
+    document.querySelector("#delete_img").setAttribute("src","../jihoon/trash_can.svg")
     let history_storage = []
 
     for (let i = 0; i <= localStorage.length - 1; i++) {
