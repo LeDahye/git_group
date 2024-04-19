@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 86919ae3ef13f312df17556938e9ea2d17924de7
 
 function history() {
 
