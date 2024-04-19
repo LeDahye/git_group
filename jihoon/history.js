@@ -1,4 +1,3 @@
-import { Make_box } from "../sonwong/calc.js"
 
 function history() {
 
