@@ -1,7 +1,12 @@
 import { ui } from '../sonwong/calc.js'
 import { btn_num_click, operator, operator2 } from '../dahye/button_event.js';
 import { equal_bt_click } from '../soohyung/equal_button.js';
-import { history } from '../jihoon/history.js';
+// import { history } from '../jihoon/history.js';
+import { history } from '../jihoon/new.js';
+
+
+
+
 
 ui()
 
@@ -23,6 +28,9 @@ document.getElementById("btn61").addEventListener("click", function () {
 
 
 
+// history()
 history()
+
+
 
 
