@@ -98,7 +98,7 @@ function operator2() {
         if (text.length > 2) {
             if (!text.includes("=")) { // 여기서 괄호 추가
                 text += "=";
-                document.getElementById("display2").innerHTML = text;
+                display2.innerHTML = text;
             }
         }
     });
