@@ -7,7 +7,7 @@ class Make_box{
         this.parent = parent
         this.className=className
     }
-    make() {
+    make_box() {
         const El = document.createElement(this.type)
         El.id = this.id
         if (this.className !== undefined) {
@@ -24,7 +24,7 @@ class Make_num_button{
         this.className = className
         this.parent = parent;
     }
-    make() {
+    make_button() {
         for (let i = 0; i<10;i++){
             const El = document.createElement(this.type)
             const text = document.createTextNode(i)
@@ -42,7 +42,7 @@ class Make_operator_button extends Make_num_button{
         super(type,className,parent)
     }
 
-    make() {
+    make_operator() {
         const operator=["=", "-", "x", "&divide", "(", ")", ".", "b", "C", "+"];
         
         for(let x of operator){
@@ -78,13 +78,13 @@ const result_display = new Make_box("div", "display1", "#dis_container");
 
 function ui() {
     
-main_container.make()
-pad_box.make()
-num_button.make()
-dis_container.make()
-modify_display.make()
-result_display.make()
-operator_button.make()
+main_container.make_box()
+pad_box.make_box()
+num_button.make_button()
+dis_container.make_box()
+modify_display.make_box()
+result_display.make_box()
+operator_button.make_operator()
 css_set()
     
 }
