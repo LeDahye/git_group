@@ -1,146 +1,95 @@
-class Make_box {
-    // 생성자로 요소 정의
-    constructor(type, id,parent) {
-        
-        // 
-        this.display1 = document.createElement(type);
-        this.display1.id = id;
-        this.parent = parent;
-        document.querySelector(this.parent).appendChild(this.display1);
+
+//Div박스 생성 클래스
+class Make_box{
+    constructor(type,id,parent,className) {
+        this.type = type;
+        this.id = id
+        this.parent = parent
+        this.className=className
+    }
+    make() {
+        const El = document.createElement(this.type)
+        El.id = this.id
+        if (this.className !== undefined) {
+            El.className = this.className
+        }
+        document.querySelector(this.parent).appendChild(El)
     }
 }
 
-
-function make_display() {
-    const dis_container = new Make_box("div","dis_container","#container")
-    const modify_display = new Make_box("div", "display2", "#dis_container");
-    const result_display = new Make_box("div", "display1","#dis_container");
+//숫자 패드 생성 클래스
+class make_num_button{
+    constructor(type,className,parent) {
+        this.type = type;
+        this.className = className
+        this.parent = parent;
+    }
+    make() {
+        for (let i = 0; i<10;i++){
+            const El = document.createElement(this.type)
+            const text = document.createTextNode(i)
+            El.appendChild(text)
+            El.id = `btn${i}`
+            El.className = this.className
+            document.getElementById(this.parent).appendChild(El)
+            }
+    }
 }
-export default make_display
+
+//연산자 패드 생성 클래스
+class make_operator_button extends make_num_button{
+    constructor(type,className,parent) {
+        super(type,className,parent)
+    }
+
+    make() {
+        const operator=["=", "-", "x", "&divide", "(", ")", ".", "b", "C", "+"];
+        
+        for(let x of operator){
+            const El = document.createElement(this.type)
+            const text = document.createTextNode(x)
+            El.appendChild(text)
+            El.id = `btn${x.charCodeAt(0)}`
+            El.className = this.className
+            document.getElementById(this.parent).appendChild(El)
+            }     
+    }
+}
+
+function css_set() {
+    document.getElementById("btn98").innerHTML = "<img src=\"../sonwong/back.png\"></img>"
+    document.getElementById("btn38").innerHTML = "<img src=\"../sonwong/division.png\"></img>"
+    
+}
 
 
 
 
+const pad_box = new Make_box("div", "pad_box","#container")
+const main_container = new Make_box("div", "container","body")
+const num_button = new make_num_button("button","btn","pad_box")
+const operator_button = new make_operator_button("button", "btn operate", "pad_box")
+
+const dis_container = new Make_box("div", "dis_container", "#container")
+const modify_display = new Make_box("div", "display2", "#dis_container");
+const result_display = new Make_box("div", "display1", "#dis_container");
 
 
 
+function ui() {
+    
+main_container.make()
+pad_box.make()
+num_button.make()
+dis_container.make()
+modify_display.make()
+result_display.make()
+operator_button.make()
+css_set()
+    
+}
+
+export { ui, Make_box }
 
 
-
-
-
-
-
-
-
-
-
-// const display2 = document.getElementById("display2")
-// document.getElementById("dis_container").appendChild(display2)
-
-
-// const display1 = document.getElementById("display1")
-// document.getElementById("dis_container").appendChild(display1)
-
-
-
-
-
-
-// class Calculator {
-//     constructor() {
-//         // display1 생성
-//         this.display1 = document.createElement('div');
-//         this.display1.id = 'display1';
-//         document.body.appendChild(this.display1);
-
-//         // display2 생성
-//         this.display2 = document.createElement('div');
-//         this.display2.id = 'display2';
-//         document.body.appendChild(this.display2);
-//     }
-
-//     // 기능1(d1, d2 값이 있으면 d2 -> d1으로 이동, d2 초기화)
-//     show(value) {
-//         if (value === 1) {
-//             let d1 = this.display1.innerHTML;
-//             let d2 = this.display2.innerHTML;
-
-//             if (d1 !== '' && d2 !== '') {
-//                 d1 = d2;
-//                 d2 = '';
-//             } else {
-//                 d1 += value;
-//             }
-//         } else if (value === 2) {
-//             d2 += value;
-//         }
-//         this.display1.innerHTML = d1;
-//         this.display2.innerHTML = d2;
-//     }
-
-//     //기능2(숫자 버튼 입력시  d1,d2에 값이 있으면 d1,d2 초기화)
-//     two(num) {
-//         let d3 = this.display1.innerHTML;
-//         let d4 = this.display2.innerHTML;
-
-//         if (!isNaN(num)) {
-//             d3 = '';
-//             d4 = '';
-//             d3 += num;
-//             d4 += num;
-//         }
-//         this.display1.innerHTML = d3;
-//         this.display2.innerHTML = d4;
-//     }
-// }
-
-
-// // Calculator 객체 생성
-// const calculator1 = new Calculator();
-
-// const display1 = document.getElementById("display1")
-// const display2 = document.getElementById("display2")
-// document.getElementById("dis_container").appendChild(display2)
-// document.getElementById("dis_container").appendChild(display1)
-
-
-
-
-// 기능1(d1, d2 값이 있으면 d2 -> d1으로 이동, d2 초기화)
-// function show(value) {
-//     if (value === 1) {
-//         let d1 = this.display1.innerHTML;
-//         let d2 = this.display2.innerHTML;
-
-//         if (d1 !== '' && d2 !== '') {
-//             d1 = d2;
-//             d2 = '';
-//         } else {
-//             d1 += value;
-//         }
-//     } else if (value === 2) {
-//         d2 += value;
-//     }
-//     this.display1.innerHTML = d1;
-//     this.display2.innerHTML = d2;
-// }
-
-// //기능2(숫자 버튼 입력시  d1,d2에 값이 있으면 d1,d2 초기화)
-// function two(num) {
-//     let d3 = this.display1.innerHTML;
-//     let d4 = this.display2.innerHTML;
-
-//     if (!isNaN(num)) {
-//         d3 = '';
-//         d4 = '';
-//         d3 += num;
-//         d4 += num;
-//     }
-//     this.display1.innerHTML = d3;
-//     this.display2.innerHTML = d4;
-// }
-
-
-// Calculator 객체 생성
 
