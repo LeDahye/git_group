@@ -32,6 +32,7 @@
 
 #container:hover #delete_button {
     animation: move1 0.35s ease-out forwards;
+    visibility: visible
     
 }
 .btn_history{
@@ -50,12 +51,13 @@
     background-color: rgba(255, 255, 255, 0.296);
     scale: 97%;
 }
-.btn_history:not(:hover){
+/* .btn_history:not(:hover){
     background-color: rgba(255, 255, 255, 0.5);
-}
+} */
 
 
 #delete_button {
+    visibility: hidden;
     border:none;
     position: absolute;
     line-height: 60px;
@@ -73,12 +75,6 @@
     background-color: rgba(255, 160, 160, 0.8);
 
 }
-#delete_button:active{
-
-    transition: none;
-    
-}
-
 @keyframes move {
     from {
         background-color: rgba(255, 255, 255, 0);
@@ -96,13 +92,6 @@
     width: 17%;
     height: 30%;
 }
-
-#test {
-    width: 600px;
-    height: 100px;
-    background-color: aquamarine;
-}
-
 @keyframes move1 {
     from {
         opacity: 0;

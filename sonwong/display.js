@@ -62,7 +62,7 @@ class MakeOperatorButton extends MakeNumButton{
 function css_set() {
     document.getElementById("btn98").innerHTML = "<img src=\"../sonwong/back.png\"></img>"
     document.getElementById("btn38").innerHTML = "<img src=\"../sonwong/division.png\"></img>"
-    
+    // document.getElementById("btn98").innerHTML = "<img src=\"../sonwong/del_button.svg\"></img>"
 }
 
 
