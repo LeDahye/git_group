@@ -77,8 +77,8 @@ const history1 = {
     
     deleter() {
         document.querySelector(`#delete_button`).addEventListener("click", () => {
-            localStorage.clear()
-            document.querySelector(`#history_box`).innerHTML = ""
+        localStorage.clear()
+        document.querySelector(`#history_box`).innerHTML = ""
         })        
     }
 }
@@ -97,7 +97,7 @@ const historyUI = {
         document.querySelector("#delete_img").setAttribute("src", this.del_svg)
     },
     
-    make_history_btn: function () {
+    make_history_container: function () {
         const history_box = new Make_box("div", "history_box", "#container");
         history_box.make()
     },
@@ -105,7 +105,7 @@ const historyUI = {
 
 function history_main() {
     
-    historyUI.make_history_btn()
+    historyUI.make_history_container()
     historyUI.make_delete_btn()
     history1.call_storage("history_box", "btn_hitory")
     history1.eq_btn_event()
