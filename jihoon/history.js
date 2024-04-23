@@ -56,11 +56,9 @@ const history1 = {
     },
     //로컬에 데이터 전송
     push_local:function(temp_storage){
-    
         let history_storage = []
         history_storage.push(temp_storage)
-        window.localStorage.setItem(localStorage.length, history_storage.slice(-1))
-        
+        window.localStorage.setItem(localStorage.length, history_storage.slice(-1)) 
     },
     
     send_to_display: function (count, temp) {
