@@ -41,6 +41,12 @@ function all_operate(operate) {
         }, 1500);     
             
         }
+    } else {
+        document.getElementById(`btn${operate.charCodeAt(0)}`).className = "btn op warning"
+        setTimeout(() => {
+        document.getElementById(`btn${operate.charCodeAt(0)}`).className="btn op"
+        }, 1500);     
+        
     }
 }
 
@@ -81,6 +87,12 @@ function operator2() {
         } else if (isNaN(text[text.length - 1])) {
             text += "(";
             display2.innerHTML = text;
+        } else {
+            document.getElementById("btn40").className = "btn op warning"
+            setTimeout(() => {
+                document.getElementById("btn40").className="btn op"
+            }, 1500);                 
+            
         }
     });
 
@@ -126,7 +138,6 @@ function operator2() {
                 let result = document.getElementById('display2').innerText
                 document.getElementById('display1').innerText = equal_bt_click(result)
             }
-
         }
     });
 }
