@@ -119,4 +119,4 @@ function equal_bt_click(modify) {
 
 
 
-export { equal_bt_click };
+export { equal_bt_click, equal_cal };

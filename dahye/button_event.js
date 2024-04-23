@@ -1,5 +1,7 @@
 ///////////////////////////* ↓↓↓ 숫자 click 이벤트 ↓↓↓ *///////////////////////////
 
+import {equal_bt_click} from "../soohyung/postfix_calc.js";
+
 function btn_num_click() {
     for (let i = 0; i < 10; i++) {
         document.getElementById(`btn${i}`).addEventListener('click',
@@ -38,7 +40,9 @@ function all_operate(operate) {
 
 // 연산자(+, -, x, ÷) 클릭 이벤트 함수
 function operator(btn_id, event, operate) {
-    document.getElementById(btn_id).addEventListener(event, () => { all_operate(operate) });
+    document.getElementById(btn_id).addEventListener(event, () => {
+        all_operate(operate)
+    });
 }
 
 // 점 버튼
@@ -95,16 +99,18 @@ function operator2() {
     // equal 버튼 (결과값 도출)
     document.getElementById("btn61").addEventListener("click", function () {
         let text = display2.innerHTML;
-        if (text.length > 2) {
-            if (!text.includes("=")) { // 여기서 괄호 추가
-                text += "=";
-                display2.innerHTML = text;
+        let text_arr = equal_cal.convert_to_arr(text);
+        if (text_arr.length >= 3 && !text_arr.includes('=')) {
+            if (text_arr.includes('+') || text_arr.includes('-') || text_arr.includes('x') || text2.includes('÷')) {
+                let modify = document.getElementById("display2").innerHTML;
+                document.getElementById("display1").innerHTML = equal_bt_click(modify)
             }
+
         }
     });
 }
 
-export { btn_num_click, operator, operator2 };
+export {btn_num_click, operator, operator2};
 
 
 // 키보드
