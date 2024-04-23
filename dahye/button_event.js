@@ -152,9 +152,6 @@ function operator2() {
                     document.getElementById('display1').innerText = equal_bt_click(result);
                 }
 
-
-
-
         }
     });
 }
