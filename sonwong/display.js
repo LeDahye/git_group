@@ -23,6 +23,7 @@ class MakeNumButton {
         this.type = type;
         this.className = className
         this.parent = parent;
+
     }
     make_button() {
         for (let i = 0; i < 10; i++) {
@@ -37,8 +38,9 @@ class MakeNumButton {
 }
 
 //연산자 패드 생성 클래스
-class MakeOperatorButton extends MakeNumButton {
-    constructor(type, className, parent) {
+
+class MakeOperatorButton extends MakeNumButton{
+    constructor(type,className,parent) {
         super(type, className, parent)
     }
 
@@ -57,9 +59,9 @@ class MakeOperatorButton extends MakeNumButton {
 }
 
 function css_set() {
-    document.getElementById("btn98").innerHTML = "<img src=\"../sonwong/back.png\"></img>"
+    // document.getElementById("btn98").innerHTML = "<img src=\"../sonwong/back.png\"></img>"
     document.getElementById("btn38").innerHTML = "<img src=\"../sonwong/division.png\"></img>"
-
+    document.getElementById("btn98").innerHTML = "<img src=\"../sonwong/del_button.svg\"></img>"
 }
 
 

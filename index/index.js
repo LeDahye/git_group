@@ -1,7 +1,7 @@
 import { ui } from '../sonwong/display.js'
 import { btn_num_click, operator, operator2 } from '../dahye/button_event.js';
 import { equal_bt_click } from '../soohyung/postfix_calc.js';
-import { history } from '../jihoon/history.js';
+import { history_main } from '../jihoon/history.js';
 
 ui()    // display 연결
 btn_num_click()   // 연산식 호출
@@ -18,4 +18,4 @@ document.getElementById("btn61").addEventListener("click", function () {
     document.getElementById("display1").innerHTML = result
 })
 
-history()   // history 연결
+history_main()
