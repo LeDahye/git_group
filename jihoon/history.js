@@ -1,9 +1,9 @@
-    class Make_box{
-    constructor(type,id,parent,className) {
+class Make_box {
+    constructor(type, id, parent, className) {
         this.type = type;
         this.id = id
         this.parent = parent
-        this.className=className
+        this.className = className
     }
     make() {
         const El = document.createElement(this.type)
@@ -40,7 +40,7 @@ const history1 = {
                 
                 //히스토리버튼 기능 삽입
                 let temp
-                this.send_to_display(count)
+                this.send_to_display(count, temp)
             }
         })
     },

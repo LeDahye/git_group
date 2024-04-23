@@ -1,0 +1,47 @@
+@startuml
+class MakeBox {
+-type : String
+-id : String
+-parent : String
+-className : String
+
++constructor(type : String, id : String, parent : String, 
++make_box() : void
+}
+class MakeNumButton {
+-type : String
+-className : String
+-parent : String
+
++constructor(type : String, className : String, parent : S
++make_button() : void
+}
+class MakeOperatorButton {
++make_operator() : void
+}
+MakeNumButton <|-- MakeOperatorButton : Inheritance
+object equal_cal {
++sym_change(modify: string): string
++add_x(modify: string): string
++add_plus(modify: string): string
++del_equal_bt(modify: string): string
++convert_to_arr(modify: string): string[]
++priority_fn(priority: string): int
++convert_to_post(sikArr: string[]): string[]
++cal_postfix(postfix_result: string[]): string
+}
+
+object history1 {
++eq_btn_event()
++call_storage(parent:string)
++push_local(temp_storage:string)
++send_to_display(count:number)
++deleter()
+}
+
+object hitoryUI{
++make_history_container()
++make_delete_btn()
+}
+
+@enduml
