@@ -71,7 +71,7 @@ function css_set() {
 const pad_box = new MakeBox("div", "pad_box","#container")
 const main_container = new MakeBox("div", "container","body")
 const num_button = new MakeNumButton("button","btn","pad_box")
-const operator_button = new MakeOperatorButton("button", "btn operate", "pad_box")
+const operator_button = new MakeOperatorButton("button", "btn op", "pad_box")
 
 const dis_container = new MakeBox("div", "dis_container", "#container")
 const modify_display = new MakeBox("div", "display2", "#dis_container");

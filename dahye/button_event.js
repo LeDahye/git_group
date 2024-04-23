@@ -32,6 +32,12 @@ function all_operate(operate) {
         if (text[text.length - 1] === '(') {
             text += operate;
             display2.innerHTML = text;
+        } else {
+        document.getElementById(`btn${operate.charCodeAt(0)}`).className = "btn op warning"
+        setTimeout(() => {
+        document.getElementById(`btn${operate.charCodeAt(0)}`).className="btn op"
+        }, 1500);     
+            
         }
     }
 }
@@ -53,6 +59,11 @@ function operator2() {
         } else if (!isNaN(text[text.length - 1])) {
             text += ".";
             display2.innerHTML = text;
+        } else {
+            document.getElementById("btn46").className = "btn op warning"
+            setTimeout(() => {
+                document.getElementById("btn46").className="btn op"
+            }, 1500);            
         }
     });
 
@@ -76,6 +87,12 @@ function operator2() {
         if (text.includes("(") === true) {
             text += ")";
             display2.innerHTML = text;
+        } else {
+            
+            document.getElementById("btn41").className = "btn op warning"
+            setTimeout(() => {
+                document.getElementById("btn41").className="btn op"
+            }, 1500);
         }
     });
 
