@@ -122,11 +122,17 @@ function operator2() {
         if (text_arr.length >= 3 && !text_arr.includes('=')) {
             if (text_arr.includes('+') || text_arr.includes('-') || text_arr.includes('*') || text_arr.includes('/')) {
 
-                document.getElementById('display2').innerText += "="
-                let result = document.getElementById('display2').innerText
-                document.getElementById('display1').innerText = equal_bt_click(result)
+                document.getElementById('display2').innerText += "=";
+                let result = document.getElementById('display2').innerText;
+                document.getElementById('display1').innerText = equal_bt_click(result);
+                console.log('gd')
             }
 
+        } else {
+            document.getElementById("btn61").className = "btn op warning"
+            setTimeout(() => {
+                document.getElementById("btn61").className="btn op"
+            }, 1500);
         }
     });
 }
