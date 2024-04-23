@@ -128,11 +128,11 @@ function operator2() {
     // equal 버튼 (결과값 도출)
     document.getElementById("btn61").addEventListener("click", function () {
         let text = display2.innerText;
-        let text2 = equal_cal.add_plus(text)
-        let text_arr = equal_cal.convert_to_arr(text2);
-        console.log(text_arr);
+        let text2 = equal_cal.sym_change(text)
+        let text3 = equal_cal.add_plus(text2)
+        let text_arr = equal_cal.convert_to_arr(text3);
         if (text_arr.length >= 3 && !text_arr.includes('=')) {
-            if (text_arr.includes('+') || text_arr.includes('-') || text_arr.includes('x') || text_arr.includes('÷')) {
+            if (text_arr.includes('+') || text_arr.includes('-') || text_arr.includes('*') || text_arr.includes('/')) {
 
                 document.getElementById('display2').innerText += "="
                 let result = document.getElementById('display2').innerText
