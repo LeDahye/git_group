@@ -14,17 +14,13 @@
     
 }
 
-#test {
-    display: none;
-}
-
 #container:hover #history_box {
     visibility: visible;
     animation: move 0.35s forwards linear;
     transition: 0.35s;
 }
 
-#history_box button {
+#history_box .btn_history {
     height: 60px;
     width: 300px;
     cursor: pointer;
