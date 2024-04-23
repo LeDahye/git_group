@@ -40,7 +40,7 @@ const history1 = {
                 
                 //히스토리버튼 기능 삽입
                 let temp
-                this.send_to_display(count)
+                this.send_to_display(count, temp)
             }
         })
     },
