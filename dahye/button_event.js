@@ -1,6 +1,6 @@
 ///////////////////////////* ↓↓↓ 숫자 click 이벤트 ↓↓↓ *///////////////////////////
 
-import {equal_bt_click} from "../soohyung/postfix_calc.js";
+import {equal_bt_click, equal_cal} from "../soohyung/postfix_calc.js";
 
 function btn_num_click() {
     for (let i = 0; i < 10; i++) {
@@ -98,17 +98,22 @@ function operator2() {
 
     // equal 버튼 (결과값 도출)
     document.getElementById("btn61").addEventListener("click", function () {
-        let text = display2.innerHTML;
-        let text_arr = equal_cal.convert_to_arr(text);
+        let text = display2.innerText;
+        let text2 = equal_cal.add_plus(text)
+        let text_arr = equal_cal.convert_to_arr(text2);
+        console.log(text_arr);
         if (text_arr.length >= 3 && !text_arr.includes('=')) {
-            if (text_arr.includes('+') || text_arr.includes('-') || text_arr.includes('x') || text2.includes('÷')) {
-                let modify = document.getElementById("display2").innerHTML;
-                document.getElementById("display1").innerHTML = equal_bt_click(modify)
+            if (text_arr.includes('+') || text_arr.includes('-') || text_arr.includes('x') || text_arr.includes('÷')) {
+
+                document.getElementById('display2').innerText += "="
+                let result = document.getElementById('display2').innerText
+                document.getElementById('display1').innerText = equal_bt_click(result)
             }
 
         }
     });
 }
+
 
 export {btn_num_click, operator, operator2};
 

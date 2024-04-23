@@ -1,8 +1,9 @@
-import { ui } from '../sonwong/display.js'
-import { btn_num_click, operator, operator2 } from '../dahye/button_event.js';
+import {ui} from '../sonwong/display.js'
+import {btn_num_click, operator, operator2} from '../dahye/button_event.js';
 
 
-import { history_main } from '../jihoon/history.js';
+import {history_main} from '../jihoon/history.js';
+import {equal_bt_click, equal_cal} from "../soohyung/postfix_calc.js";
 
 ui()    // display 연결
 btn_num_click()   // 연산식 호출
@@ -14,7 +15,6 @@ operator2();    // 연산자 및 기호 버튼
 
 
 
-
 // history()
 history_main()
 
@@ -22,5 +22,4 @@ history_main()
 
 
 
-history_main()
 
