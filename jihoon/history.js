@@ -46,17 +46,25 @@ const history1 = {
     },
     
     call_storage: function (parent, classname) {
+        let count = window.localStorage.length
+        let temp
         for (let i = 0; i <= localStorage.length - 1; i++) {
             const history = window.localStorage.getItem(i)
             const El = new Make_box("button", `get_button${i}`, `#${parent}`, classname)
             El.make()
             document.querySelector(`#get_button${i}`).innerHTML = history
-            
+            let button = document.querySelector(`#get_button${i}`)
+            button.addEventListener("click", () => {
+            let text = button.innerHTML
+            temp = text.split("=", 2)
+            document.getElementById(this.modify).innerHTML=temp[0]+"="
+            document.getElementById(this.result).innerHTML =temp[1]
+            })           
+
         }
     },
     //로컬에 데이터 전송
     push_local:function(temp_storage){
-    
         let history_storage = []
         history_storage.push(temp_storage)
         window.localStorage.setItem(localStorage.length, history_storage.slice(-1))
