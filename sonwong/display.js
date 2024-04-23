@@ -39,18 +39,11 @@ class MakeNumButton {
 }
 
 //연산자 패드 생성 클래스
-<<<<<<< HEAD
+
 class MakeOperatorButton extends MakeNumButton {
     constructor(type, className, parent) {
         super(type, className, parent)
 
-
-=======
-
-class MakeOperatorButton extends MakeNumButton{
-    constructor(type,className,parent) {
-        super(type, className, parent)
->>>>>>> 00de2f42a56feabbe6bae6f1caf9090bac0534a8
     }
 
     make_operator() {
@@ -74,11 +67,8 @@ function css_set() {
 }
 
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 00de2f42a56feabbe6bae6f1caf9090bac0534a8
 const pad_box = new MakeBox("div", "pad_box", "#container")
 const main_container = new MakeBox("div", "container", "body")
 const num_button = new MakeNumButton("button", "btn", "pad_box")
@@ -89,11 +79,8 @@ const modify_display = new MakeBox("div", "display2", "#dis_container");
 const result_display = new MakeBox("div", "display1", "#dis_container");
 
 
-function ui() {
-<<<<<<< HEAD
 
-=======
->>>>>>> 00de2f42a56feabbe6bae6f1caf9090bac0534a8
+function ui() {
     main_container.make_box()
     pad_box.make_box()
     num_button.make_button()
@@ -102,13 +89,8 @@ function ui() {
     result_display.make_box()
     operator_button.make_operator()
     css_set()
-<<<<<<< HEAD
-
-=======
->>>>>>> 00de2f42a56feabbe6bae6f1caf9090bac0534a8
 }
 
+
+
 export {ui, MakeBox}
-
-
-
