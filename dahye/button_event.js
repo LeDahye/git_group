@@ -35,12 +35,17 @@ function all_operate(operate) {
             text += operate;
             display2.innerHTML = text;
         } else {
+            document.getElementById(`btn${operate.charCodeAt(0)}`).className = "btn op warning"
+            setTimeout(() => {
+                document.getElementById(`btn${operate.charCodeAt(0)}`).className = "btn op"
+            }, 1500);
+
+        }
+    } else {
         document.getElementById(`btn${operate.charCodeAt(0)}`).className = "btn op warning"
         setTimeout(() => {
-        document.getElementById(`btn${operate.charCodeAt(0)}`).className="btn op"
-        }, 1500);     
-            
-        }
+            document.getElementById(`btn${operate.charCodeAt(0)}`).className = "btn op"
+        }, 1500);
     }
 }
 
@@ -51,8 +56,26 @@ function operator(btn_id, event, operate) {
     });
 }
 
-// 점 버튼
+// -버튼
 function operator2() {
+    document.getElementById("btn45").addEventListener("click", function () {
+        let text = display2.innerHTML;
+
+        if (display1.innerHTML !== '' && display2.innerHTML !== '') {
+            display2.innerHTML = display1.innerHTML;
+            display1.innerHTML = '';
+            display2.innerHTML += '-';
+        } else if (text[text.length - 1] !== '-') {
+            text += "-";
+            display2.innerHTML = text;
+        } else {
+            document.getElementById(`btn45`).className = "btn op warning"
+            setTimeout(() => {
+                document.getElementById(`btn45`).className="btn op"
+            }, 1500);
+        }
+    })
+
     document.getElementById("btn46").addEventListener("click", function () {
         let text = display2.innerHTML;
 
@@ -67,7 +90,7 @@ function operator2() {
             document.getElementById("btn46").className = "btn op warning"
             setTimeout(() => {
                 document.getElementById("btn46").className="btn op"
-            }, 1500);            
+            }, 1500);
         }
     });
 
@@ -119,13 +142,18 @@ function operator2() {
         let text2 = equal_cal.sym_change(text)
         let text3 = equal_cal.add_plus(text2)
         let text_arr = equal_cal.convert_to_arr(text3);
-        if (text_arr.length >= 3 && !text_arr.includes('=')) {
-            if (text_arr.includes('+') || text_arr.includes('-') || text_arr.includes('*') || text_arr.includes('/')) {
 
-                document.getElementById('display2').innerText += "="
-                let result = document.getElementById('display2').innerText
-                document.getElementById('display1').innerText = equal_bt_click(result)
-            }
+        if (text_arr.length >= 3 && !text.includes('=')) {
+
+                if (text_arr.includes('+') || text_arr.includes('-') || text_arr.includes('*') || text_arr.includes('/')) {
+                    document.getElementById('display2').innerText += "=";
+
+                    let result = document.getElementById('display2').innerText;
+                    document.getElementById('display1').innerText = equal_bt_click(result);
+                }
+
+
+
 
         }
     });
