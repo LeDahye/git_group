@@ -10,3 +10,5 @@ operator("btn247", "click", "÷");    // 나누기 버튼
 operator2();
 
 history_main()
+
+

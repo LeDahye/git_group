@@ -106,6 +106,11 @@ const Operator = {
             if (display1.innerHTML !== '' && display2.innerHTML !== '') {
                 display2.innerHTML = display1.innerHTML;
                 display1.innerHTML = '';
+            } else if (text[text.length - 1] === '-') {
+                document.getElementById("btn40").className = "btn op warning"
+                setTimeout(() => {
+                    document.getElementById("btn40").className = "btn op"
+                }, 1500);
             } else if (isNaN(text[text.length - 1])) {
                 text += "(";
                 display2.innerHTML = text;
