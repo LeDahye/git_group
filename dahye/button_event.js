@@ -113,6 +113,8 @@ function operator2() {
 export {btn_num_click, operator, operator2};
 
 
+
+
 // 키보드
 // function btn_num_key() {
 //     for (let i = 0; i < 10; i++) {
