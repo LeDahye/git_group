@@ -130,7 +130,28 @@ button::selection{
     transition: 0.5s;
     
 }
+@keyframes warning {
+    0% {
+        transform: translateX(-4px);
 
+    }
+    
+    25% {
+        transform: translateX(4px);
+
+    }
+    
+    50% {
+        transform: translateX(-4px);
+
+    }
+    
+    75% {
+        transform: translateX(4px);
+
+    }
+}
+/* ============================================================================================================================================== */
 #btn99 {
     /* = 연산자 */
     grid-area: a;
@@ -164,7 +185,7 @@ button::selection{
     grid-area: b;
 }
 
-#btn38 {
+#btn247 {
     /* / 연산자 */
     grid-area: d;
 }
@@ -234,27 +255,27 @@ button::selection{
     from {
         transform: scale(1, 1);
     }
-
+    
     30% {
         transform: scale(1.25, 0.75);
     }
-
+    
     40% {
         transform: scale(0.75, 1.25);
     }
-
+    
     50% {
         transform: scale(1.15, 0.85);
     }
-
+    
     65% {
         transform: scale(0.95, 1.05);
     }
-
+    
     75% {
         transform: scale(1.05, 0.95);
     }
-
+    
     to {
         transform: scale(1, 1);
     }
@@ -275,3 +296,13 @@ button::selection{
         
     }
 }
+    .warning{
+        animation: warning 0.2s ease ;
+        animation-iteration-count: 2;
+        
+        transition: 0.35s;
+    }
+    .warning:hover{
+        color: red;
+        border-color: rgb(243, 27, 27); 
+    }

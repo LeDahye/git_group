@@ -1,6 +1,6 @@
 ///////////////////////////* ↓↓↓ 숫자 click 이벤트 ↓↓↓ *///////////////////////////
 
-import {equal_bt_click} from "../soohyung/postfix_calc.js";
+import {equal_bt_click, equal_cal} from "../soohyung/postfix_calc.js";
 
 function btn_num_click() {
     for (let i = 0; i < 10; i++) {
@@ -34,7 +34,19 @@ function all_operate(operate) {
         if (text[text.length - 1] === '(') {
             text += operate;
             display2.innerHTML = text;
+        } else {
+        document.getElementById(`btn${operate.charCodeAt(0)}`).className = "btn op warning"
+        setTimeout(() => {
+        document.getElementById(`btn${operate.charCodeAt(0)}`).className="btn op"
+        }, 1500);     
+            
         }
+    } else {
+        document.getElementById(`btn${operate.charCodeAt(0)}`).className = "btn op warning"
+        setTimeout(() => {
+        document.getElementById(`btn${operate.charCodeAt(0)}`).className="btn op"
+        }, 1500);     
+        
     }
 }
 
@@ -57,6 +69,11 @@ function operator2() {
         } else if (!isNaN(text[text.length - 1])) {
             text += ".";
             display2.innerHTML = text;
+        } else {
+            document.getElementById("btn46").className = "btn op warning"
+            setTimeout(() => {
+                document.getElementById("btn46").className="btn op"
+            }, 1500);            
         }
     });
 
@@ -70,6 +87,12 @@ function operator2() {
         } else if (isNaN(text[text.length - 1])) {
             text += "(";
             display2.innerHTML = text;
+        } else {
+            document.getElementById("btn40").className = "btn op warning"
+            setTimeout(() => {
+                document.getElementById("btn40").className="btn op"
+            }, 1500);                 
+            
         }
     });
 
@@ -80,6 +103,12 @@ function operator2() {
         if (text.includes("(") === true) {
             text += ")";
             display2.innerHTML = text;
+        } else {
+            
+            document.getElementById("btn41").className = "btn op warning"
+            setTimeout(() => {
+                document.getElementById("btn41").className="btn op"
+            }, 1500);
         }
     });
 
@@ -98,17 +127,21 @@ function operator2() {
 
     // equal 버튼 (결과값 도출)
     document.getElementById("btn61").addEventListener("click", function () {
-        let text = display2.innerHTML;
-        let text_arr = equal_cal.convert_to_arr(text);
+        let text = display2.innerText;
+        let text2 = equal_cal.sym_change(text)
+        let text3 = equal_cal.add_plus(text2)
+        let text_arr = equal_cal.convert_to_arr(text3);
         if (text_arr.length >= 3 && !text_arr.includes('=')) {
-            if (text_arr.includes('+') || text_arr.includes('-') || text_arr.includes('x') || text2.includes('÷')) {
-                let modify = document.getElementById("display2").innerHTML;
-                document.getElementById("display1").innerHTML = equal_bt_click(modify)
-            }
+            if (text_arr.includes('+') || text_arr.includes('-') || text_arr.includes('*') || text_arr.includes('/')) {
 
+                document.getElementById('display2').innerText += "="
+                let result = document.getElementById('display2').innerText
+                document.getElementById('display1').innerText = equal_bt_click(result)
+            }
         }
     });
 }
+
 
 export {btn_num_click, operator, operator2};
 
