@@ -47,7 +47,7 @@ class MakeOperatorButton extends MakeNumButton {
     }
 
     make_operator() {
-        const operator = ["=", "-", "x", "&divide", "(", ")", ".", "b", "C", "+"];
+        const operator = ["=", "-", "x", "÷", "(", ")", ".", "b", "C", "+"];
 
         for (let x of operator) {
             const El = document.createElement(this.type)
@@ -62,7 +62,7 @@ class MakeOperatorButton extends MakeNumButton {
 
 function css_set() {
     // document.getElementById("btn98").innerHTML = "<img src=\"../sonwong/back.png\"></img>"
-    document.getElementById("btn38").innerHTML = "<img src=\"../sonwong/division.png\"></img>"
+    document.getElementById("btn247").innerHTML = "<img src=\"../sonwong/division.png\"></img>"
     document.getElementById("btn98").innerHTML = "<img src=\"../sonwong/del_button.svg\"></img>"
 }
 
