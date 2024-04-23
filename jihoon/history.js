@@ -1,9 +1,9 @@
-    class Make_box{
-    constructor(type,id,parent,className) {
+class Make_box {
+    constructor(type, id, parent, className) {
         this.type = type;
         this.id = id
         this.parent = parent
-        this.className=className
+        this.className = className
     }
     make() {
         const El = document.createElement(this.type)
