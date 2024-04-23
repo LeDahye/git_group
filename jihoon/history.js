@@ -107,7 +107,7 @@ function history_main() {
     
     historyUI.make_history_container()
     historyUI.make_delete_btn()
-    history1.call_storage("history_box", "btn_hitory")
+    history1.call_storage("history_box", "btn_history")
     history1.eq_btn_event()
     history1.deleter()
 }
