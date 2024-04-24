@@ -44,4 +44,14 @@ object hitoryUI{
 +make_delete_btn()
 }
 
+object Operater{
+    +minus()
+    +dot()
+    +open()
+    +close()
+    +clear()
+    +delete()
+    +equal()
+}
+
 @enduml
