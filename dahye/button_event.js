@@ -181,6 +181,23 @@ const Operator = {
 
 }
 
+
+// function even_bracket(text) {
+//     let open_bracket = 0;
+//     let close_bracket = 0;
+//
+//     for (let i = 0; i < text.length; i++) {
+//         if (text[i] === '(') {
+//             open_bracket++;
+//         } else if (text[i] === ')') {
+//           close_bracket++;
+//         }
+//     }
+//     return open_bracket === close_bracket
+//
+//
+// }
+
 function operator2() {
     Operator.minus();
     Operator.dot();

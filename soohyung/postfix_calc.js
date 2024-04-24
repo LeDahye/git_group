@@ -35,7 +35,7 @@ const equal_cal = {
     },
 
     convert_to_arr: function convert_to_arr(modify) {
-        return modify.match(/(?:\d+\.\d+|\d+|-?\d+|\+|\-|\*|\/|\(|\))/g);
+        return modify.match(/(?:\d+\.\d+|\d+\.\d*|\.\d+|-?\d+(?:\.\d+)?|\+|\-|\*|\/|\(|\))/g);
     },
 
     priority_fn: function priority_fn(priority) {
